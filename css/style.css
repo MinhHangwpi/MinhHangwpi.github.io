@@ -6,6 +6,7 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+
 .slides-navigation .prev,
 .slides-navigation .next {
     width: 47px;
@@ -34,7 +35,7 @@
     z-index: 3;
     text-align: center;
     margin-top: -125px;
-}
+} 
 
 .titleMessage .heading p {
     color: #fff;
@@ -51,7 +52,7 @@
 .titleMessage .heading .sub {
     font-size: 23px;
     font-weight: 200;  
-}
+} 
 
 .section {
     padding: 100px 0;
@@ -377,3 +378,8 @@
 .copyrightSection p {
     margin: 0;
 }
+
+.container video {
+    width: 50%;
+  }
+  
