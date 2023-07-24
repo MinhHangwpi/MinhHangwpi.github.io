@@ -326,7 +326,7 @@
 
         <div class="itemsContainer">
           <ul class="items">
-            <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 apps" data-category="prediction">
+            <li class="element-item col-xs-6 col-sm-6 col-md-4 col-lg-4 apps" data-category="prediction">
               <div class="item">
                 <img src="images/example_prediction.png" alt="">
                 <div class="icons">
@@ -345,7 +345,20 @@
               </div>
             </li>
 
-            <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 websites" data-category=".loss">
+            <li class="element-item col-xs-6 col-sm-6 col-md-4 col-lg-6 me" data-category=".prediction">
+              <div class="item">
+                <img src="images/ml-project-results-2.png" alt="">
+                <div class="icons">
+                  <a href="images/ml-project-results-2.png" title="View Image" class="openButton" data-fancybox
+                    data-caption="Print out of the first section of our results.">
+                    <i class="fa fa-search"></i>
+                  </a>
+                </div>
+                <div class="imageOverlay"></div>
+              </div>
+            </li>
+
+            <li class="element-item col-xs-6 col-sm-6 col-md-4 col-lg-4 websites" data-category=".loss">
               <div class="item">
                 <img src="images/loss_results.png" alt="">
                 <div class="icons">
@@ -359,7 +372,7 @@
               </div>
             </li>
 
-            <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 me" data-category=".accuracy">
+            <li class="element-item col-xs-6 col-sm-6 col-md-4 col-lg-6 me" data-category=".accuracy">
               <div class="item">
                 <img src="images/accuracy_result.png" alt="">
                 <div class="icons">
@@ -375,6 +388,7 @@
 
               </div>
             </li>
+
           </ul>
         </div>
         <p style="text-align:center;"><em>Selected output from our model, the model's loss and accuracy over 20
@@ -397,7 +411,7 @@
           characters and turn this problem into a Sequence to Sequence (seq2seq) LSTM solution.</p>
 
         <h5>Dealing with such a large data set</h5>
-        <p>The vast size of the dataset (189) made it impossible to load it all into memory during training. To overcome
+        <p>The vast size of the dataset (i.e. 189GB) made it impossible to load it all into memory during training. To overcome
           this, we used mini-batch training with sixty-four training examples for each batch.</p>
 
         <h5>Kaggle Limitations</h5>
