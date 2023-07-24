@@ -12,12 +12,15 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+<<<<<<< HEAD
 p,
 ul {
     text-align: justify;
 
 }
 
+=======
+>>>>>>> e3f3402da7c92cc8ae612618b965943097c85ddd
 .slides-navigation .prev,
 .slides-navigation .next {
     width: 47px;
@@ -67,6 +70,7 @@ ul {
 
 .section {
     padding: 100px 0;
+    text-align: justify;
 }
 
 .aboutImage {
