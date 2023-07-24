@@ -49,7 +49,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#background">Background <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#introduction">Introduction <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#proposedsolution">Proposed Solution</a>
@@ -57,12 +57,13 @@
         <li class="nav-item">
           <a class="nav-link" href="#procedure">Procedure</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#challenges">Challenges</a>
-        </li>
-        
+
         <li class="nav-item">
           <a class="nav-link" href="#results">Results</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#challenges">Challenges</a>
         </li>
 
         <li class="nav-item">
@@ -104,7 +105,7 @@
     </nav>
   </div>
 
-  <div id="Introduction" class="section">
+  <div id="introduction" class="section">
     <div class="container">
       <div class="row">
         <div class="heading">
@@ -118,7 +119,8 @@
           on
           <a href="https://www.kaggle.com/competitions/asl-fingerspelling/overviewl">average 158% faster than an average
             typer on a mobile device.</a> The Summer of 2023, <a
-            href="https://www.kaggle.com/competitions/asl-fingerspelling">Google is hosting a Kaggle Competition</a> with
+            href="https://www.kaggle.com/competitions/asl-fingerspelling">Google is hosting a Kaggle Competition</a>
+          with
           this in mind, and we set out to accomplish this task with machine learning.
 
         </p>
@@ -167,7 +169,8 @@
             </div>
           </div>
         </div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum, necessitatibus, laudantium molestiae rem ducimus, velit quia iure sit dolores eligendi id ratione alias! Quidem, ad. Delectus possimus aut ab.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum, necessitatibus, laudantium molestiae rem
+        ducimus, velit quia iure sit dolores eligendi id ratione alias! Quidem, ad. Delectus possimus aut ab.
       </div>
     </div>
   </div>
@@ -175,16 +178,37 @@
   <div id="proposedsolution" class="skillsSection section">
     <div class="container">
       <div class="row">
-      <div class="heading">
-        <h2>Proposed Solution</h2>
-      </div>
-        <p>This is a problem well suited for deep learning because the data provided is a series of sequential frames representing each phrase. We feel a type of Recurrent Neural Network (RNN), specifically Long-Short-Term-Memory would work best. This neural network would overcome the problem of vanishing gradient descent that would otherwise occur with the amount of frames we need to process.</p>
+        <div class="heading">
+          <h2>Proposed Solution</h2>
+        </div>
+        <p>
+          This is a problem well suited for deep learning because we have a series of sequential frames to represent a
+          phrase, and we felt that an algorithm of the Recurrent Neural Network (RNN) family would be a good candidate,
+          and the type of RNN we thought was best was Long-Short-Term-Memory (LSTM), which overcomes the problem of
+          vanishing gradient descent that would otherwise occur because of the amount of frames we need to process.
+        </p>
 
-        <p>Our dataset is provided by the Kaggle competition. The size is 189 Gb, comprising of 123 parquet files. The metadata that is included is the following: (1) a unique identifier for each data file; (2) a unique identifier of each participant that contributed; (3) a unique identifier for the landmark sequence, and there may be multiple in each data file; (4) and the phrase of what is being said (this makes it labeled data).</p> 
-          
-        <p>The phrases include addresses, phone numbers, and urls. Each phrase that we are tasked to decipher is in its own parquet file that contains hundreds of thousands of rows of data points. Each row has 1,629 values representing 543 landmarks normalized with MediaPipe pose detection. There is so much information for each phrase that each parquet file representing it is over a gigabyte each.</p>
-      
-    </div></div>
+        <p>
+          Our dataset is provided by the Kaggle competition. It is 189 gigabytes and comprises 123 parquet files. The
+          metadata that is included is the following:
+        <ol>
+          <li>a unique identifier for each data file</li>
+          <li>a unique identifier of each participant that contributed</li>
+          <li>a unique identifier for the landmark sequence, and there may be multiple in each data file</li>
+          <li>and the phrase of what is being said (this makes it labeled data)</li>
+        </ol>
+        The train and test datasets contain randomly generated addresses, phone numbers, and urls derived from
+        components
+        of real addresses/phone numbers/urls. Each phrase that we are tasked to decipher is in a parquet file that
+        contains hundreds of thousands of rows of data points. Each row has 1,600 values representing body landmarks
+        normalized with MediaPipe pose detection. The row is derived from a still video frame where a signer would be
+        gesturing. There is so much information for each phrase that each parquet file representing it is over a
+        gigabyte each.
+        </p>
+
+        <img src="images\parquet_structure.png" alt="explaining parquet file structure" height="500px" width="800px">
+      </div>
+    </div>
   </div>
 
 
@@ -204,13 +228,13 @@
         csv, respectively, we consolidated them all into a TFRecord format. This also facilitates the caching and
         fetching of data batches later on during training.
         The `character_to_prediction` json file, provided as part of the data set maps each character to an integer
-        value, e.g. ‘!’ is mapped to 1, ‘a’ is mapped to 32. We will add 3 new characters, ‘<’ and ‘>’ to mark the start
+        value, e.g. '!' is mapped to 1, ‘a’ is mapped to 32. We will add 3 new characters, ‘<’ and ‘>’ to mark the start
           and end of a phrase respectively. And use ‘P’ to mark the padding. As such our final dictionary named
           char_to_num has 62 key-value pairs. This also means that the final layer of the algorithm will be a multiclass
           classification with 62 classes.
           <h3>Step 2: Splitting the data set for training, validation and test</h3>
 
-          <img src="images\data_split.png" alt="">
+          <img src="images\data_split.png" alt="" width="600px">
           We split the dataset into three subsets: training, validation, and test. It then efficiently processes the
           data in batches of size 64 using TensorFlow's TFRecordDataset. Each subset is decoded, converted, batched, and
           prefetched to optimize training performance. The resulting datasets are cached in memory to speed up access
@@ -239,7 +263,7 @@
             The overall architecture is a sequence-to-sequence model with two LSTM layers, followed by a TimeDistributed
             dense layer for multi-class classification, and a custom downsampling step before training.</p>
 
-          <img src="images\model_summary.png" alt="" height="600px" width="700px">
+          <img src="images\model_summary.png" alt="" width="400px">
 
           <h3> Step 4: Model Training and Inference</h3>
           <p>
@@ -254,19 +278,11 @@
     <div id="results" class="skillsSection section">
       <div class="container">
 
-      <div class="row">
-        <div class="heading">
-          <h2>Results</h2>
-        </div>
+        <div class="row">
+          <div class="heading">
+            <h2>Results</h2>
+          </div>
 
-          <!-- <div class="filter">
-            <div class="button-group filters-button-group">
-              <button class="button is-checked" data-filter="*">All</button>
-              <button class="button" data-filter=".prediction">Phrase Prediction</button>
-              <button class="button" data-filter=".loss">Training and Validation Losses</button>
-              <button class="button" data-filter=".accuracy">Training and Validation Accuracies</button>
-            </div>
-          </div> -->
           <div class="container">
             <p>
               We noticed that while many of the phrases did not seem close, when we examined each of the individual
@@ -308,10 +324,6 @@
                       ">
                       <i class="fa fa-search"></i>
                     </a>
-
-                    <!-- <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a> -->
                   </div>
 
                   <div class="imageOverlay"></div>
@@ -326,10 +338,6 @@
                       This means the model is able to learn and improve over time">
                       <i class="fa fa-search"></i>
                     </a>
-
-                    <!-- <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a> -->
                   </div>
                   <div class="imageOverlay"></div>
 
@@ -345,58 +353,31 @@
                       The accuracy for the training set is slightly higher than the accuracy for the validation set, meaning the model is slightly overfitting">
                       <i class="fa fa-search"></i>
                     </a>
-
-                    <!-- <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a> -->
                   </div>
 
                   <div class="imageOverlay"></div>
                 </div>
               </li>
-
-              <!-- <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 apps" data-category=".apps">
-                <div class="item">
-                  <img src="thumbnails/dog-square.jpg" alt="">
-                  <div class="icons">
-                    <a href="images/dog.jpg" title="View Image" class="openButton" data-fancybox
-                      data-caption="This is a cute dog">
-                      <i class="fa fa-search"></i>
-                    </a>
-
-                    <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-
-              <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 me" data-category=".me">
-                <div class="item">
-                  <img src="thumbnails/dog-square.jpg" alt="">
-                  <div class="icons">
-                    <a href="images/dog.jpg" title="View Image" class="openButton" data-fancybox
-                      data-caption="This is a cute dog">
-                      <i class="fa fa-search"></i>
-                    </a>
-
-                    <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-
-                  <div class="imageOverlay"></div>
-                </div>
-              </li> -->
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="conclusion" class="statsSection section">
+    <div id="challenges" class="statsSection section">
+      <div class="container">
+        <div class="row">
+          <div class="heading">
+            <h2>Challenges</h2>
+          </div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat harum voluptatum vero dolore possimus
+          corrupti cupiditate veritatis similique illo, nulla consequuntur eum, ea eaque aperiam est fugit modi optio?
+          Magnam.
+        </div>
+      </div>
+    </div>
+
+    <div id="conclusion" class="skillsSection section">
       <div class="container">
         <div class="row">
           <div class="heading">
@@ -423,7 +404,7 @@
       </div>
     </div>
 
-    <div id="future-work" class="skillsSection section">
+    <div id="future-work" class="statsSection section">
       <div class="container">
         <div class="row">
           <div class="heading">
@@ -442,25 +423,25 @@
       </div>
     </div>
 
-  <div id="team" class="statsSection section">
-    <div class="container">
-      <div class="row">
-        <div class="heading">
-          <h2>Team</h2>
+    <div id="team" class="skilsSection section">
+      <div class="container">
+        <div class="row">
+          <div class="heading">
+            <h2>Team</h2>
+          </div>
+          <ul>
+            <li>Minh-Hang Radetsky</li>
+            <li>Sam Bryan</li>
+            <li>Adish Jain</li>
+            <li>Sireesha Bachu</li>
+          </ul>
         </div>
-        <ul>
-          <li>Team member 1</li>
-          <li>Team member 2</li>
-          <li>Team member 3</li>
-          <li>Team member 4</li>
-        </ul>
       </div>
     </div>
-  </div>
 
     <div class="copyrightSection">
       <div class="col-md-12 text-center">
-        <p>&copy; [Team name placeholder] 2023</p>
+        <p>&copy; Gompei Ninjas 2023</p>
       </div>
     </div>
 
