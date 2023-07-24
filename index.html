@@ -1,4 +1,4 @@
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,6 +26,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
 </head>
 
@@ -39,7 +44,7 @@
   </div>
 
   <nav id="navigation" class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Gompei Ninjas</a>
+    <a class="navbar-brand" href="#"><em>Gompei Ninjas</em></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +57,7 @@
           <a class="nav-link" href="#introduction">Introduction <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#proposedsolution">Proposed Solution</a>
+          <a class="nav-link" href="#solution">Solution</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#procedure">Procedure</a>
@@ -65,6 +70,10 @@
         <li class="nav-item">
           <a class="nav-link" href="#challenges">Challenges</a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#future">Future Work</a>
+        </li>
 
         <li class="nav-item">
           <a class="nav-link" href="#conclusion">Conclusion</a>
@@ -75,21 +84,25 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/MinhHangwpi/cs539_final_project" target="_blank">Github</a>
+          <a class="nav-link" href="#references">References</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/MinhHangwpi/cs539_final_project" target="_blank"><b>Github</b></a>
         </li>
       </ul>
     </div>
 
   </nav>
 
-  <div id="slides" class="section">
+  <div id="slides">
 
     <div class="overlay"></div>
 
     <div class="slides-container">
-      <img src="images\image1.jpg" alt="">
-      <img src="images\image2.jpg" alt="">
-      <img src="images\image3.jpg" alt="">
+      <img src="images/image1.jpg" alt="">
+      <img src="images/image2.jpg" alt="">
+      <img src="images/image3.jpg" alt="">
     </div>
 
     <div class="titleMessage">
@@ -111,85 +124,104 @@
         <div class="heading">
           <h2>Introduction</h2>
         </div>
+          <p>An essential component of American Sign Language (ASL) is spelling a word out letter-by-letter, also known as fingerspelling. Unfortunately, while voice recognition algorithms are very prevalent, an equivalent gesture-to-text is still underdeveloped. Native signers would benefit greatly from such a technology as they fingerspell on <a href="https://www.kaggle.com/competitions/asl-fingerspelling/overview">average 158% faster than an average typer on a mobile device.</a> Over the Summer of 2023,  <a href”https://www.kaggle.com/competitions/asl-fingerspelling”>Google is hosting a Kaggle Competition</a> to achieve such a task. We registered for the competition and we set out to solve this with machine learning.</p>
 
-        <p>
-          An essential component of American Sign Language (ASL) is when a word is spelled out letter-by-letter, also
-          known as fingerspelling. Unfortunately, while voice recognition algorithms are very prevalent, an equivalent
-          gesture-to-text is still underdeveloped. It would be an incredible benefit to native signers, who fingerspell
-          on
-          <a href="https://www.kaggle.com/competitions/asl-fingerspelling/overviewl">average 158% faster than an average
-            typer on a mobile device.</a> The Summer of 2023, <a
-            href="https://www.kaggle.com/competitions/asl-fingerspelling">Google is hosting a Kaggle Competition</a>
-          with
-          this in mind, and we set out to accomplish this task with machine learning.
-
-        </p>
-
-        <p>
-          The competition provides a dataset of phrases signed by people signing ASL. Originally recorded as videos,
-          they
-          have been normalized with <a href=”https://developers.google.com/mediapipe”>Google's Mediapipes</a>, Google's
-          body landmark extraction algorithm. All the data for each phrase is stored in a parquet file, and each row
-          from
-          the file represents a “frame” from the video. All files are labeled with the expected (ground truth) phrase,
-          which allows a direct comparison with our results.
-          The body, hand, and face coordinates are extracted from the video frames and mapped with coordinates. We want
-          to
-          predict the phrase that is being signed, for example “3 creekhouse,” shown below:
-        </p>
-
+          <p>The competition provides a dataset of phrases signed in ASL. Originally recorded as videos, they have been normalized with <a href=”https://developers.google.com/mediapipe”>Mediapipes</a>, Google's body landmark extraction algorithm. The data for each phrase is stored in a parquet file, and each row from the file represents a "frame" from the video. All files are labeled with the expected phrase (the ground truth), which allows a direct comparison with our results.</p> 
+          
+          <p>The body, hand, and face coordinates are extracted from the video frames and mapped with coordinates.</p>
 
         <div class="container text-center">
           <div class="row">
             <div class="col-md-4">
               <video controls>
-                <source src="images\videos\scaleskuhaylah.mp4" type="video/mp4">
+                <source src="images/videos/scaleskuhaylah.mp4" type="video/mp4">
               </video>
             </div>
             <div class="col-md-4">
               <video controls>
-                <source src="images\videos\scaleskuhaylah.mp4" type="video/mp4">
+                <source src="images/videos/scaleskuhaylah.mp4" type="video/mp4">
               </video>
             </div>
             <div class="col-md-4">
               <video controls>
-                <source src="images\videos\1383 william lanier.mp4" type="video/mp4">
+                <source src="images/videos/1383 william lanier.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="row">
             <div class="col ">
-              <div>Phrase: 3 creek house</div>
+              <div>"3 creek house"</div>
             </div>
             <div class="col">
-              <div>Phrase: scales/kuhaylah</div>
+              <div>"scales/kuhaylah"</div>
             </div>
             <div class="col">
-              <div>Phrase: 1383 william lanier</div>
+              <div>"1383 william lanier"</div>
             </div>
           </div>
         </div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum, necessitatibus, laudantium molestiae rem
-        ducimus, velit quia iure sit dolores eligendi id ratione alias! Quidem, ad. Delectus possimus aut ab.
+        <p style="text-align:center;font-weight: bold;"><br>Three examples of phrases signed in the dataset.</p>
       </div>
     </div>
   </div>
 
-  <div id="proposedsolution" class="skillsSection section">
+  <div id="solution" class="skillsSection section">
+    <div class="container">
+      <div class="row">
+
+      <div class="heading">
+        <h2>Solution</h2>
+      </div>
+        <p>This is a problem well suited for deep learning because the data provided is a series of sequential frames representing each phrase. We feel a type of Recurrent Neural Network (RNN) would be able to accomplish this, specifically a Long-Short-Term-Memory (LSTM). This neural network would overcome the problem of vanishing gradient descent that would otherwise occur in RNNs with the amount of frames we need to process.</p>
+
+        <p>Our dataset is provided by the Kaggle competition. The size is 189 gigabytes, comprising of 123 parquet files. The metadata that is included is the following: (1) a unique identifier for each data file; (2) a unique identifier of each participant that contributed; (3) a unique identifier for the landmark sequence, and there may be multiple in each data file; (4) and the phrase of what is being said (this makes it labeled data).</p> 
+          
+        <p>The phrases include addresses, phone numbers, and urls. Each phrase that we are tasked to decipher is in its own parquet file that contains hundreds of thousands of rows of data points. Each row has 1,629 values representing 543 landmarks normalized with MediaPipe pose detection. There is so much information for each phrase that each parquet file representing it is over a gigabyte each.</p>
+      
+    </div></div>
+  </div>
+
+  <div id="procedure" class="statsSection section">
     <div class="container">
       <div class="row">
         <div class="heading">
-          <h2>Proposed Solution</h2>
+          <h2>Procedure</h2>
         </div>
-        <p>
-          This is a problem well suited for deep learning because we have a series of sequential frames to represent a
-          phrase, and we felt that an algorithm of the Recurrent Neural Network (RNN) family would be a good candidate,
-          and the type of RNN we thought was best was Long-Short-Term-Memory (LSTM), which overcomes the problem of
-          vanishing gradient descent that would otherwise occur because of the amount of frames we need to process.
-        </p>
+<p>We completed the training process of the transformer model in the following steps:</p>
+        <ol>
+          <h5>Preprocessing the data</h5>
+            <ul>
+              <li><em>Feature extraction:</em> With fingerspelling, not all of the given coordinates are relevant. We omitted the landmark data related to the face and only the pose (body) landmark data related to the arms. We only extracted the dominant hand as only one hand is used in fingerspellling. This reduced the features from 543 to 78.</li>
+              <li>We took took the labels for the data and the data itself an consolidated them into a TFRecord format. This  facilitates the caching and fetching of data batches later on during training.</li>
+              <li>Each character is mapped to an integer value, e.g. "a" is mapped to 32. We introduced characters to mark the start of a phrase, end of a phrase, and padding at the end of the phrase ('<', '>', and 'P', respectively). Our final alphabet contains sixty-two key-value pairs, which will be the amount of classes the final algorithm will classify.</li>
+            </ul>
+            <p><br></p>
+              <h5>Step 2: Splitting the data set for training, validation and test</h5>
+              <div class="image-container">
+                <img src="images/data_split.png" alt="" style="width: 800;">
+              </div>
 
-        <p>
-          Our dataset is provided by the Kaggle competition. It is 189 gigabytes and comprises 123 parquet files. The
+              <p>We split the dataset into three subsets: train, validation, and test. It then efficiently processes the data in batches of size sixty-four using TensorFlow's TFRecordDataset. Each subset is decoded, converted, batched, and prefetched to optimize training performance. The resulting datasets are cached in memory to speed up access during training.<br><br></p>
+
+    
+          <h5>Step 3 Model architecture</h5>
+            <ul>
+              <li>We defined our Long Short-Term Memory (LSTM) neural network model using Keras.</li>
+              <li>We defined a few variables that are important in determining the shape of the input/output layers. The number of classes in the output layer is the number of unique characters in the data set, i.e. 62 characters. Each batch of the input data has the shape ( batch_size, frame_len, num_features).</li>
+              <li>We then created a sequential model, which is a linear stack of layers in Keras. The first layer is an LSTM layer with 75 units. We will use another LSTM layer to act as the encoder layer, i.e. reading the input sequence and encode it to a fixed-length sequence. RepeatVector layers were added as an adapter since the subsequent LSTM layer requires a 3D input, but the output of the previous LSTM layer is 2D. The second LSTM layer has 50 units. This LSTM model serves as a decoder layer, i.e. decoding a fixed length vector and outputting a predicted sequence. The next layer is a TimeDistributed layer, which applies a fully connected (Dense) layer with a softmax activation to each time step of the sequence. We have some issues with matching the number of frames in the predicted output and the number of frames in the target (128 vs 64). Therefore, we decided to apply to the output of the previous layer a downsizing  operation via a Lambda layer. This operation downsamples by halving the sequence length (::2) while keeping the same number of features.</li>
+              <li>The model is then compiled with the categorical cross-entropy loss function, the Adam optimizer, and the accuracy metric for evaluation during training.</li>
+              <li>The overall architecture is a sequence-to-sequence model with two LSTM layers, followed by a TimeDistributed dense layer for multi-class classification, and a custom downsampling step before training.</li>
+            </ul>
+            <p><br></p>
+          <h5>Step 4: Model training and inference</h5>
+            <ul>
+              <p>The model is then trained with the fit method using the training dataset (train_ds) and validated on the validation dataset (valid_ds) through 20 epochs. Also, we added a custom callback called DisplayOutputs is used to display model outputs during training. DisplayOutputs essentially converts the tensor numeric representation into textual phrases.</p>
+            </ul>
+            <div class="image-container">
+              <img src="images/model_summary.png" alt="" style="width: 600;">
+            </div>
+
+            Our dataset is provided by the Kaggle competition. It is 189 gigabytes and comprises 123 parquet files. The
           metadata that is included is the following:
         <ol>
           <li>a unique identifier for each data file</li>
@@ -205,112 +237,34 @@
         gesturing. There is so much information for each phrase that each parquet file representing it is over a
         gigabyte each.
         </p>
-
         <div class="image-container">
-          <img src="images\parquet_structure.png" alt="explaining parquet file structure" style="width: 800;">
+          <img src="images/parquet_structure.png" alt="explaining parquet file structure" style="width: 800;">
         </div>
-
+          </li>
       </div>
     </div>
   </div>
+          
+  </div>
+</div>
 
-
-  <div id="procedure" class="statsSection section">
-    <div class="container">
-      <div class="row">
-        <div class="heading">
-          <h2>Procedure</h2>
-        </div>
-        We completed the training process of the transformer model in the following steps:
-        <h3>Step 1: Preprocessing the data</h3>
-        Feature extraction: With fingerspelling, not all of the coordinates we were given are relevant. We omitted the
-        landmark data related to the face and some of the pose landmark data. We only used the pose coordinates related
-        to right and left arms. Also, only the dominant hand is relevant as only one hand is used for signing, so we
-        only extract the relevant hand and ignore the other. All of this reduces the features from 154 to 78.
-        Since the input data and the corresponding labels are represented by 2 different formats, i.e. parquet files and
-        csv, respectively, we consolidated them all into a TFRecord format. This also facilitates the caching and
-        fetching of data batches later on during training.
-        The `character_to_prediction` json file, provided as part of the data set maps each character to an integer
-        value, e.g. '!' is mapped to 1, ‘a’ is mapped to 32. We will add 3 new characters, ‘<’ and ‘>’ to mark the start
-          and end of a phrase respectively. And use ‘P’ to mark the padding. As such our final dictionary named
-          char_to_num has 62 key-value pairs. This also means that the final layer of the algorithm will be a multiclass
-          classification with 62 classes.
-          <h3>Step 2: Splitting the data set for training, validation and test</h3>
-
-          <div class="image-container">
-            <img src="images\data_split.png" alt="" style="width: 800;">
-          </div>
-          We split the dataset into three subsets: training, validation, and test. It then efficiently processes the
-          data in batches of size 64 using TensorFlow's TFRecordDataset. Each subset is decoded, converted, batched, and
-          prefetched to optimize training performance. The resulting datasets are cached in memory to speed up access
-          during training.
-          <h3>Step 3: Model architecture</h3>
-          <p>We defined our Long Short-Term Memory (LSTM) neural network model using Keras.
-            We define a few variables that are important in determining the shape of the input/ output layers. The
-            number
-            of class in the output layer is the number of unique characters in the data set, i.e. 62 characters. Each
-            batch of the input data has the shape ( batch_size, frame_len, num_features).
-            We then created a sequential model, which is a linear stack of layers in Keras. The first layer is an LSTM
-            layer with 75 units. We will use another LSTM layer to act as the encoder layer, i.e. reading the input
-            sequence and encode it to a fixed-length sequence. However, a RepeatVector layers is added as an adapter
-            since
-            the subsequent LSTM layer requires a 3D input, but the output of the previous LSTM layer is 2D. The second
-            LSTM layer has 50 units. This LSTM model serves as a decoder layer, i.e. decoding a fixed length vector and
-            outputting a predicted sequence. The next layer is a TimeDistributed layer, which applies a fully connected
-            (Dense) layer with a softmax activation to each time step of the sequence. We have some issues with matching
-            the number of frames in the predicted output and the number of frames in the target (128 vs 64). Therefore,
-            we
-            decided to apply to the output of the previous layer a downsizing operation via a Lambda layer. This
-            operation
-            performs downsampling by halving the sequence length (::2) while keeping the same number of features.
-            The model is then compiled with the categorical cross-entropy loss function, the Adam optimizer, and the
-            accuracy metric for evaluation during training.
-            The overall architecture is a sequence-to-sequence model with two LSTM layers, followed by a TimeDistributed
-            dense layer for multi-class classification, and a custom downsampling step before training.</p>
-          <div class="image-container">
-            <img src="images\model_summary.png" alt="" style="width: 600;">
-          </div>
-
-          <h3> Step 4: Model Training and Inference</h3>
-          <p>
-            The model is then trained with the fit method using the training dataset (train_ds) and validated on the
-            validation dataset (valid_ds) through 20 epochs. Also, we added a custom callback called DisplayOutputs is
-            used to display model outputs during training. DisplayOutputs essentially converts the tensor numeric
-            representation into textual phrases.
-          </p>
-      </div>
-    </div>
 
     <div id="results" class="skillsSection section">
       <div class="container">
-
         <div class="row">
           <div class="heading">
             <h2>Results</h2>
           </div>
-
           <div class="container">
-            <p>
-              We noticed that while many of the phrases did not seem close, when we examined each of the individual
-              letters, we were pleasantly surprised that many of the hand shapes were reasonably close. For example, it
-              might confuse a “5” and a “W”, when the only difference is the pinky is straight or bent. (The handshape
-              for “five” is how you would expect — five fingers extended.)
-            </p>
-            <p>
-              The model seems to be able to distinguish between alphabetic characters versus numeric characters. Also,
-              it was able to detect a phone number and predict the sequence length pretty accurately. Therefore, even
-              though it doesn’t meet all the requirements to translate ASL fingerspelling, it may be suitable for some
-              use cases such as detecting phone number, detecting alphabetic characters, numeric characters, or
-              detecting website URL.
-            </p>
 
-            <p>
-              the raining and validation loss both decrease over epochs while the training and validation accuracies
-              increase over epochs. This indicates that the model is improving and learning from the data. Our final
-              training accuracy rates are about 75% which are decent.
-              However, the training accuracy is slightly higher than the validation accuracy, which implies that our
-              model is slightly overfitting. However, it is not significant so we are confident that that the model will
-              perform accordingly on new data set.
+            <p>We noticed that while many of the phrases did not seem close, when we we were pleasantly surprised when we examine the individual letters, many of the hand shapes were reasonably close. For example, it
+            might confuse a “5” and a “W”, when the only difference is the pinky is straight or bent. (The handshape
+            for “five” is how you would expect — five fingers extended.)</p>
+
+              <p>The model seems to be able to distinguish between alphabetic characters versus numeric characters. It was also able to predict the sequence length fairly accurately. While it currently is not accurate enough to translate most of the phrase, it is accurate enough to see what kind of information is being displayed, such as distinguishing between a phone number and a URL.</p>
+              
+              <p>Our Model has limited functionality now and opportunity to improve. Below are samples of our results showing the model's predictions and truth values for twenty epochs.</p>
+    
             </p>
 
           </div>
@@ -319,9 +273,9 @@
             <ul class="items">
               <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 apps" data-category="prediction">
                 <div class="item">
-                  <img src="images\example_prediction.png" alt="">
+                  <img src="images/example_prediction.png" alt="">
                   <div class="icons">
-                    <a href="images\example_prediction.png" title="View Image" class="openButton" data-fancybox
+                    <a href="images/example_prediction.png" title="View Image" class="openButton" data-fancybox
                       data-caption="When manually comparing the outputs, some errors seem reasonable
                       Some hand shapes are similar, such as “5” and “W”
                       Some are identical, such as “6” and “W”
@@ -338,9 +292,9 @@
 
               <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 websites" data-category=".loss">
                 <div class="item">
-                  <img src="images\loss_results.png" alt="">
+                  <img src="images/loss_results.png" alt="">
                   <div class="icons">
-                    <a href="images\loss_results.png" title="View Image" class="openButton" data-fancybox data-caption="The losses for both training data set and validation data set decreased over 20 epochs. The finally losses are below 1.0.
+                    <a href="images/loss_results.png" title="View Image" class="openButton" data-fancybox data-caption="The losses for both training data set and validation data set decreased over 20 epochs. The finally losses are below 1.0.
                       This means the model is able to learn and improve over time">
                       <i class="fa fa-search"></i>
                     </a>
@@ -350,11 +304,11 @@
                 </div>
               </li>
 
-              <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 me" data-category=".accuracy">
+              <li class="element-item col-xs-6 col-sm-4 col-md-4 col-lg-3 me" data-category=".accuracy" >
                 <div class="item">
-                  <img src="images\accuracy_result.png" alt="">
-                  <div class="icons">
-                    <a href="images\accuracy_result.png" title="View Image" class="openButton" data-fancybox
+                  <img src="images/accuracy_result.png" alt="">
+                  <div class="icons" >
+                    <a href="images/accuracy_result.png" title="View Image" class="openButton" data-fancybox
                       data-caption="The accuracies increased over 20 epochs, ended up at above 75%. This means the model is able to learn and improve.
                       The accuracy for the training set is slightly higher than the accuracy for the validation set, meaning the model is slightly overfitting">
                       <i class="fa fa-search"></i>
@@ -362,10 +316,13 @@
                   </div>
 
                   <div class="imageOverlay"></div>
+
+                  
                 </div>
               </li>
             </ul>
           </div>
+          <p style="text-align:center;"><em>Selected output from our model, the model's loss and accuracy over 20 epoch.</em></p>
         </div>
       </div>
     </div>
@@ -376,50 +333,42 @@
           <div class="heading">
             <h2>Challenges</h2>
           </div>
-          <h3>Preprocessing</h3>
-          <p>Target phrases and input sequences are of variable length, making it hard for the LSTM model to handle. We
-            decided to preprocess the target labels used as input to include padding, start pointer, and end pointer
-            characters . And turn this problem into a Sequence to Sequence (seq2seq) LSTM solution</p>
-          <h3>Dealing with large data set</h3>
 
-          <p>The vast size of the dataset (189) made it impossible to load it all into memory during training. To
-            overcome this, we used mini-batch training with sixty-four training examples for each batch.
-          </p>
 
-          <h3>Kaggle Limitations
-          </h3>
-          <p>To overcome the storage issue of downloading the entire dataset onto our personal computers, we used Kaggle
-            notebooks, which had some limitations. Namely, the notebook would not cache the session and automatically
-            deactivate idle sessions, which made it time consuming to rerun.
+        <h5>Preprocessing</h5>
+        <p>The phrases and input sequences are of variable length, which is hard for the LSTM model to handle. We decided to preprocess the target labels used as input to include padding, start pointer, and end pointer characters and turn this problem into a Sequence to Sequence (seq2seq) LSTM solution.</p>
+        
+        <h5>Dealing with such a large data set</h5>
+        <p>The vast size of the dataset (189) made it impossible to load it all into memory during training. To overcome this, we used mini-batch training with sixty-four training examples for each batch.</p>
+        
+        <h5>Kaggle Limitations</h5>
+        <p>To overcome the storage issue of downloading the entire dataset onto our personal computers, we used Kaggle notebooks, which had some limitations. Namely, the notebook would not cache the session and automatically deactivate idle sessions, which made it time consuming to rerun.</p>
+        
+        <p>Also, sharing our notebooks with one another was incredibly difficult on this platform. The site does not utilize git, so we were forced to constantly fork each other's notebooks, manually copying over code from other versions.</p>
+  
+        <h5>Sequence to Sequence Learning</h5>
+        <p>To translate sign language to text, we used sequence to sequence learning, which is used to output sequences of varying lengths, something normally used in NLP language translation problems. In a sequence to sequence model the neural network consists of an encoding layer which takes the input and processes it, and the decoding layer which takes in the output from the encoding layer and generates the output sequence-by-sequence. Transformer models usually have superior performance and training time.</p>
+        
+        <p>However, we wanted to approach the problem in way not already attempted in the competition, so we used a Long Short Term Memory Model (LSTM). While not as sophisticated as a Transformer, it is not affected by vanishing or exploding gradients like 'vanilla' RNN. However it does have some disadvantages in relation to transformers. The encoder-decoder architecture of LSTMs requires sequential computation, leading to slower training and inference times, especially for longer sequences.</p>
+        
+        <p>Also, the “attention mechanisms” present in Transformer models allow the model to focus on specific parts of the input sequence while generating each element of the output sequence. LSTMs lack this built-in attention mechanism, meaning they may not be as effective at selectively attending to relevant parts of the input during decoding.</p>
+        
+        <h5>Levenshtein Distance</h5>
+        <p>Levenshtein Distance is a metric used to quantify the difference or similarity between two strings by measuring the minimum number of "edit operations" needed to transform one string to another.While the calculation of the Levenshtein distance from two strings or from two tensors are straightforward, applying the Levenshtein distance as a custom metric in a Keras API proves challenging.</p>
 
-            Also, sharing our notebooks with one another was incredibly difficult on this platform. The site does not
-            utilize git, so we were forced to constantly fork each other’s notebooks, manually copying over code from
-            other versions.
-          </p>
-          <h3>Sequence to Sequence learning</h3>
-          <p>To translate sign language to text, we used sequence to sequence learning, which is used to output
-            sequences of varying lengths, something normally used in NLP language translation problems. In a sequence to
-            sequence model the neural network consists of an encoding layer which takes the input and processes it, and
-            the decoding layer which takes in the output from the encoding layer and generates the output
-            sequence-by-sequence. Transformer models usually have superior performance and training time.
+        </div>
+      </div>
+    </div>
 
-            However, we wanted to approach the problem in a novel way, not already attempted in the competition, so we
-            used a Long Short Term Memory Model (LSTM). While not as sophisticated as a Transformer, it is not affected
-            by vanishing or exploding gradients like ‘vanilla’ RNN. However it does have some disadvantages in relation
-            to transformers. The encoder-decoder architecture of LSTMs requires sequential computation, leading to
-            slower training and inference times, especially for longer sequences.
-
-            Also, the “attention mechanisms” present in Transformer models allow the model to focus on specific parts of
-            the input sequence while generating each element of the output sequence. LSTMs lack this built-in attention
-            mechanism, meaning they may not be as effective at selectively attending to relevant parts of the input
-            during decoding..
-          </p>
-          <h3>Levenshtein Distance</h3>
-          <p>Levenshtein Distance is a metric used to quantify the difference or similarity between two strings by
-            measuring the minimum number of “edit operations” needed to transform one string to another.While the
-            calculation of the Levenshtein distance from two strings or from two tensors are straightforward, applying
-            the Levenshtein distance as a custom metric in a keras API proves challenging.
-          </p>
+    <div id="future" class="statsSection section">
+      <div class="container">
+        <div class="row">
+          <div class="heading">
+            <h2>Future Work</h2>
+          </div>
+            <p>One of the most important aspects that we fell short with was getting the Levenshtien Metric to work with our model. This would have allowed a much higher accuracy rate, improving our model overall.</p> 
+  
+            <p>We also feel that a more complicated architecture, perhaps one with more layers, would help us create a better model and increase performance. We were able to create the model in the end, but we didn’t have the time to tweak and perfect it.</p>
         </div>
       </div>
     </div>
@@ -441,30 +390,11 @@
 
           <p>
             On the other hand, the model still has some major issues that did not meet the original use cases we
-            proposed, i.e. to translate ASL hand and pose coordinates to meaningful English phrases, e.g. 3 Creekhouse.
+            proposed, i.e. to translate ASL hand and pose coordinates to meaningful English phrases, e.g. "3 creekhouse."
             Nevertheless, the model may be repurposed for use cases such as classifying whether the signs convey an
             alphabetic character or a number or a phone number or url. Also, since the model is confused between similar
             signs such as 5 and w, we believe with more data and more sophisticated architecture, it will be able to
             make more accurate predictions.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div id="future-work" class="statsSection section">
-      <div class="container">
-        <div class="row">
-          <div class="heading">
-            <h2>Future Work</h2>
-          </div>
-
-          <p>
-            One of the biggest things that we tried to do and were unsuccessful with was getting the Levenshtein Metric
-            to work with our model. Further work on this project would be to get this Metric working within our model.
-            By doing this we would be able to have a much higher accuracy rate and the model will be better overall.
-            Adding custom metric and custom loss functions would also help us better understand how our model performs.
-            Lastly, a more complicated architecture one that contains more layers would help us create a better model
-            and increase performance.
           </p>
         </div>
       </div>
@@ -477,12 +407,26 @@
             <h2>Team</h2>
           </div>
           <div class="row"></div>
-          <div class="col col-md-6 col-lg-3">Minh-Hang Radetsky</div>
-          <div class="col col-md-6 col-lg-3">Sam Bryan</div>
-          <div class="col col-md-6 col-lg-3">Adish Jain</div>
-          <div class="col col-md-6 col-lg-3">Sireesha Bachu</div>
-
+            <div class="col col-md-6 col-lg-3">Minh-Hang Radetsky</div>
+            <div class="col col-md-6 col-lg-3">Sam Bryan</div>
+            <div class="col col-md-6 col-lg-3">Adish Jain</div>
+            <div class="col col-md-6 col-lg-3">Sireesha Bachu</div>
         </div>
+
+  <div id="references" class="statsSection section">
+    <div class="container">
+      <div class="row">
+        <div class="heading">
+          <h2>References</h2>
+        </div>
+          <p>Although the model we built upon was our own design, we learned a lot from the following Kaggle contributer's notebook. They especially helped with the preprocessing.</p>
+        <ul>
+          <li><a href="https://www.kaggle.com/code/gusthema/asl-fingerspelling-recognition-w-tensorflow">ASL Fingerspelling Recognition w/ TensorFlow</a></li>
+        </ul>
+          <p>In addition, the following was very useful to reference:</p>
+          <ul>
+            <li>Brownlee, Jason. <em>Long Short-Term Memory Networks With Python: Develop Sequence Prediction Models With Deep Learning</em>. v1.0 ed., Machine Learning Mastery, 2017.</li>
+          </ul>
       </div>
     </div>
 

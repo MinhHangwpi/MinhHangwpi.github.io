@@ -12,6 +12,10 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+p, ul {
+  text-align: justify;
+
+}
 
 .slides-navigation .prev,
 .slides-navigation .next {
@@ -394,3 +398,12 @@
     justify-content: center;
     align-items: center;
   }
+
+li.element-item {
+    margin: 35px;
+    /* Adjust the value as needed */
+}
+
+.row .col {
+    text-align: center;
+}
