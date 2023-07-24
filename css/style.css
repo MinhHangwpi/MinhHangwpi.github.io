@@ -388,4 +388,9 @@
 .container video {
     width: 50%;
   }
-  
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
