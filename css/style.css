@@ -12,8 +12,9 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-p, ul {
-  text-align: justify;
+p,
+ul {
+    text-align: justify;
 
 }
 
@@ -45,7 +46,7 @@ p, ul {
     z-index: 3;
     text-align: center;
     margin-top: -125px;
-} 
+}
 
 .titleMessage .heading p {
     color: #fff;
@@ -56,20 +57,20 @@ p, ul {
 
 .titleMessage .heading .main {
     font-size: 50px;
-    font-weight: 200;  
+    font-weight: 200;
 }
 
 .titleMessage .heading .sub {
     font-size: 23px;
-    font-weight: 200;  
-} 
+    font-weight: 200;
+}
 
 .section {
     padding: 100px 0;
 }
 
 .aboutImage {
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .skillsSection,
@@ -79,7 +80,7 @@ p, ul {
 }
 
 .skill {
-    text-align:center;
+    text-align: center;
     margin-left: 10px;
 }
 
@@ -104,7 +105,7 @@ p, ul {
     font-size: 35px;
 }
 
-.chart .percent:after{
+.chart .percent:after {
     content: '%'
 }
 
@@ -174,12 +175,13 @@ p, ul {
 }
 
 .contactButton i {
-    font-size: 30px; /* Adjust the font size as desired */
-  }
+    font-size: 30px;
+    /* Adjust the font size as desired */
+}
 
 .contactButton:hover {
     text-decoration: none;
-    color:#e74c3c;
+    color: #e74c3c;
     background-color: #fff;
 }
 
@@ -196,7 +198,7 @@ p, ul {
 .contactButton:hover .text {
     opacity: 1;
     visibility: visible;
-  }
+}
 
 .contact-group {
     margin: 30px;
@@ -302,7 +304,7 @@ p, ul {
     -transition: all 0.2s linear, 1s;
 }
 
-.items .item:hover .imageOverlay{
+.items .item:hover .imageOverlay {
     opacity: 1;
 }
 
@@ -334,33 +336,33 @@ p, ul {
 
 
 #navigation {
-	background-color: #e74c3c;
+    background-color: #e74c3c;
     padding: 20px 10px;
     z-index: 100;
     width: 100%;
 }
 
 #navigation li {
-	padding: 0 10px;
+    padding: 0 10px;
 }
 
 #navigation li a {
-	color: #fff;
+    color: #fff;
 }
 
 .navbar-brand,
 .navbar-brand:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .navbar-toggler-icon {
-	background: url(../images/icons/menu.png);
-	background-size: 100%;
+    background: url(../images/icons/menu.png);
+    background-size: 100%;
 }
 
 .fixedNav #navigation {
-	position: fixed;
-	top: 0;
+    position: fixed;
+    top: 0;
 }
 
 .loader {
@@ -387,17 +389,18 @@ p, ul {
 
 .copyrightSection p {
     margin: 0;
+    text-align: center;
 }
 
 .container video {
     width: 50%;
-  }
+}
 
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 li.element-item {
     margin: 35px;
@@ -405,5 +408,14 @@ li.element-item {
 }
 
 .row .col {
+    text-align: center;
+}
+
+/* to correct the alignment of the strings in the slideshow */
+.main {
+    text-align: center;
+}
+
+.heading {
     text-align: center;
 }
