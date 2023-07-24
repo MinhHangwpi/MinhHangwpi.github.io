@@ -398,3 +398,12 @@ p, ul {
     justify-content: center;
     align-items: center;
   }
+
+li.element-item {
+    margin: 35px;
+    /* Adjust the value as needed */
+}
+
+.row .col {
+    text-align: center;
+}
