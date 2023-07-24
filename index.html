@@ -183,10 +183,15 @@
 
         <p>
           Our dataset is provided by the Kaggle competition. It is 189 gigabytes and comprises 123 parquet files. The
-          metadata that is included is the following: (1) a unique identifier for each data file; (2) a unique
-          identifier of each participant that contributed; (3) a unique identifier for the landmark sequence, and there
-          may be multiple in each data file; (4) and the phrase of what is being said (this makes it labeled data). The
-          train and test datasets contain randomly generated addresses, phone numbers, and urls derived from components
+          metadata that is included is the following: 
+          <ol>
+            <li>A unique identifier for each data file</li>
+            <li>A unique identifier of each participant that contributed</li>
+            <li>A unique identifier for the landmark sequence, and there may be multiple in each data file</li>
+            <li>A and the phrase of what is being said (this makes it labeled data)</li>
+          </ol>  
+          
+          The train and test datasets contain randomly generated addresses, phone numbers, and urls derived from components
           of real addresses/phone numbers/urls. Each phrase that we are tasked to decipher is in a parquet file that
           contains hundreds of thousands of rows of data points. Each row has 1,600 values representing body landmarks
           normalized with MediaPipe pose detection. The row is derived from a still video frame where a signer would be
@@ -194,7 +199,7 @@
           gigabyte each.
         </p>
 
-        <img src="images\parquet_structure.png" alt="explaining parquet file structure" height="350px" width="800px">
+        <img src="images\parquet_structure.png" alt="explaining parquet file structure" height="500px" width="800px">
 
 
       </div>
@@ -253,7 +258,7 @@
             The overall architecture is a sequence-to-sequence model with two LSTM layers, followed by a TimeDistributed
             dense layer for multi-class classification, and a custom downsampling step before training.</p>
 
-          <img src="images\model_summary.png" alt="" height="400px" width="400px">
+          <img src="images\model_summary.png" alt="" height="600px" width="700px">
 
           <h3> Step 4: Model Training and Inference</h3>
           <p>
