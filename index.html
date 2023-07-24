@@ -39,7 +39,7 @@
   </div>
 
   <nav id="navigation" class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">[Team Name Placeholder]</a>
+    <a class="navbar-brand" href="#">Gompei Ninjas</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +57,10 @@
         <li class="nav-item">
           <a class="nav-link" href="#procedure">Procedure</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#challenges">Challenges</a>
+        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="#results">Results</a>
         </li>
@@ -89,7 +93,7 @@
 
     <div class="titleMessage">
       <div class="heading">
-        <p class="main">Translating American Sign Language</p>
+        <p class="main">[Slide Heading Placeholder]</p>
         <p class="sub typed"></p>
       </div>
     </div>
@@ -163,7 +167,7 @@
             </div>
           </div>
         </div>
-
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum, necessitatibus, laudantium molestiae rem ducimus, velit quia iure sit dolores eligendi id ratione alias! Quidem, ad. Delectus possimus aut ab.
       </div>
     </div>
   </div>
@@ -171,39 +175,16 @@
   <div id="proposedsolution" class="skillsSection section">
     <div class="container">
       <div class="row">
-        <div class="heading">
-          <h2>Proposed Solution</h2>
-        </div>
-        <p>
-          This is a problem well suited for deep learning because we have a series of sequential frames to represent a
-          phrase, and we felt that an algorithm of the Recurrent Neural Network (RNN) family would be a good candidate,
-          and the type of RNN we thought was best was Long-Short-Term-Memory (LSTM), which overcomes the problem of
-          vanishing gradient descent that would otherwise occur because of the amount of frames we need to process.
-        </p>
-
-        <p>
-          Our dataset is provided by the Kaggle competition. It is 189 gigabytes and comprises 123 parquet files. The
-          metadata that is included is the following: 
-          <ol>
-            <li>A unique identifier for each data file</li>
-            <li>A unique identifier of each participant that contributed</li>
-            <li>A unique identifier for the landmark sequence, and there may be multiple in each data file</li>
-            <li>A and the phrase of what is being said (this makes it labeled data)</li>
-          </ol>  
-          
-          The train and test datasets contain randomly generated addresses, phone numbers, and urls derived from components
-          of real addresses/phone numbers/urls. Each phrase that we are tasked to decipher is in a parquet file that
-          contains hundreds of thousands of rows of data points. Each row has 1,600 values representing body landmarks
-          normalized with MediaPipe pose detection. The row is derived from a still video frame where a signer would be
-          gesturing. There is so much information for each phrase that each parquet file representing it is over a
-          gigabyte each.
-        </p>
-
-        <img src="images\parquet_structure.png" alt="explaining parquet file structure" height="500px" width="800px">
-
-
+      <div class="heading">
+        <h2>Proposed Solution</h2>
       </div>
-    </div>
+        <p>This is a problem well suited for deep learning because the data provided is a series of sequential frames representing each phrase. We feel a type of Recurrent Neural Network (RNN), specifically Long-Short-Term-Memory would work best. This neural network would overcome the problem of vanishing gradient descent that would otherwise occur with the amount of frames we need to process.</p>
+
+        <p>Our dataset is provided by the Kaggle competition. The size is 189 Gb, comprising of 123 parquet files. The metadata that is included is the following: (1) a unique identifier for each data file; (2) a unique identifier of each participant that contributed; (3) a unique identifier for the landmark sequence, and there may be multiple in each data file; (4) and the phrase of what is being said (this makes it labeled data).</p> 
+          
+        <p>The phrases include addresses, phone numbers, and urls. Each phrase that we are tasked to decipher is in its own parquet file that contains hundreds of thousands of rows of data points. Each row has 1,629 values representing 543 landmarks normalized with MediaPipe pose detection. There is so much information for each phrase that each parquet file representing it is over a gigabyte each.</p>
+      
+    </div></div>
   </div>
 
 
@@ -273,10 +254,10 @@
     <div id="results" class="skillsSection section">
       <div class="container">
 
-        <div class="row">
-          <div class="heading">
-            <h2>Results</h2>
-          </div>
+      <div class="row">
+        <div class="heading">
+          <h2>Results</h2>
+        </div>
 
           <!-- <div class="filter">
             <div class="button-group filters-button-group">
@@ -461,33 +442,21 @@
       </div>
     </div>
 
-    <div id="team" class="statsSection section">
-      <div class="container">
-        <div class="row">
-          <div class="heading">
-            <h2>Team</h2>
-          </div>
-          <ul>
-            <li>Minh-Hang Radetsky</li>
-            <li>Sam Bryan</li>
-            <li>Adish Jain</li>
-            <li>Sireesha Baichu</li>
-          </ul>
+  <div id="team" class="statsSection section">
+    <div class="container">
+      <div class="row">
+        <div class="heading">
+          <h2>Team</h2>
         </div>
+        <ul>
+          <li>Team member 1</li>
+          <li>Team member 2</li>
+          <li>Team member 3</li>
+          <li>Team member 4</li>
+        </ul>
       </div>
     </div>
-
-    <div id="references" class="statsSection section">
-      <div class="container">
-        <div class="row">
-          <div class="heading">
-            <h2>References</h2>
-          </div>
-
-          TODO: To include the references here
-        </div>
-      </div>
-    </div>
+  </div>
 
     <div class="copyrightSection">
       <div class="col-md-12 text-center">

@@ -21,7 +21,7 @@ $(document).ready(function () {
     });
 
     var typed = new Typed('.typed', {
-        strings: ['String 1.', 'String 2.', 'String 3.'],
+        strings: ['Our First Kaggle Competition', 'WPI CS539', 'Machine Learning'],
         typeSpeed: 70,
         loop: true,
         startDelay: 1000,
