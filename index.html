@@ -158,8 +158,8 @@
         <li>Model architecture</li>
           <ul>
             <li>We defined our Long Short-Term Memory (LSTM) neural network model using Keras.</li>
-            <li>We define a few variables that are important in determining the shape of the input/output layers. The number of classes in the output layer is the number of unique characters in the data set, i.e. 62 characters. Each batch of the input data has the shape ( batch_size, frame_len, num_features).</li>
-            <li>We then created a sequential model, which is a linear stack of layers in Keras. The first layer is an LSTM layer with 75 units. We will use another LSTM layer to act as the encoder layer, i.e. reading the input sequence and encode it to a fixed-length sequence. However, a RepeatVector layers is added as an adapter since the subsequent LSTM layer requires a 3D input, but the output of the previous LSTM layer is 2D. The second LSTM layer has 50 units. This LSTM model serves as a decoder layer, i.e. decoding a fixed length vector and outputting a predicted sequence. The next layer is a TimeDistributed layer, which applies a fully connected (Dense) layer with a softmax activation to each time step of the sequence. We have some issues with matching the number of frames in the predicted output and the number of frames in the target (128 vs 64). Therefore, we decided to apply to the output of the previous layer a downsizing  operation via a Lambda layer. This operation performs downsampling by halving the sequence length (::2) while keeping the same number of features.</li>
+            <li>We defined a few variables that are important in determining the shape of the input/output layers. The number of classes in the output layer is the number of unique characters in the data set, i.e. 62 characters. Each batch of the input data has the shape ( batch_size, frame_len, num_features).</li>
+            <li>We then created a sequential model, which is a linear stack of layers in Keras. The first layer is an LSTM layer with 75 units. We will use another LSTM layer to act as the encoder layer, i.e. reading the input sequence and encode it to a fixed-length sequence. RepeatVector layers were added as an adapter since the subsequent LSTM layer requires a 3D input, but the output of the previous LSTM layer is 2D. The second LSTM layer has 50 units. This LSTM model serves as a decoder layer, i.e. decoding a fixed length vector and outputting a predicted sequence. The next layer is a TimeDistributed layer, which applies a fully connected (Dense) layer with a softmax activation to each time step of the sequence. We have some issues with matching the number of frames in the predicted output and the number of frames in the target (128 vs 64). Therefore, we decided to apply to the output of the previous layer a downsizing  operation via a Lambda layer. This operation downsamples by halving the sequence length (::2) while keeping the same number of features.</li>
             <li>The model is then compiled with the categorical cross-entropy loss function, the Adam optimizer, and the accuracy metric for evaluation during training.</li>
             <li>The overall architecture is a sequence-to-sequence model with two LSTM layers, followed by a TimeDistributed dense layer for multi-class classification, and a custom downsampling step before training.</li>
           </ul>
@@ -221,7 +221,7 @@
 
           <p>The model seems to be able to distinguish between alphabetic characters versus numeric characters. It was also able to predict the sequence length fairly accurately. While it currently is not accurate enough to translate most of the phrase, it is accurate enough to see what kind of information is being displayed, such as distinguishing between a phone number and a URL.</p>
           
-          <p>Our Model has limited functionality now and opportunity to improve. Below are samples of our results showing the model’s predictions and truth values for twenty epochs.</p>
+          <p>Our Model has limited functionality now and opportunity to improve. Below are samples of our results showing the model's predictions and truth values for twenty epochs.</p>
 
           <p>Training and Validation Loss and Accuracy over 20 epochs for LSTM model are shown below:</p>
 
@@ -336,7 +336,7 @@
     </div>
   </div>
 
-  <div id="futre" class="statsSection section">
+  <div id="future" class="statsSection section">
     <div class="container">
       <div class="row">
         <div class="heading">
@@ -369,11 +369,11 @@
         <div class="heading">
           <h2>Team</h2>
         </div>
-        <ul>
-          <li>Sam Bryan</li>
-          <li>Minh-Hang Radetsky</li>
-          <li>Sireesha Bachu</li>
-          <li>Adish Jain</li>
+        <ul style ="text-align: center; list-style-position: inside; ">
+          <li><b>Sam Bryan</b></li>
+          <li><b>Minh-Hang Radetsky</b></li>
+          <li><b>Sireesha Bachu</b></li>
+          <li><b>Adish Jain</b></li>
         </ul>
       </div>
     </div>
