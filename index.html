@@ -94,7 +94,7 @@
 
     <div class="titleMessage">
       <div class="heading">
-        <p class="main">[Slide Heading Placeholder]</p>
+        <p class="main">Translating American Sign Language Fingerspelling</p>
         <p class="sub typed"></p>
       </div>
     </div>
@@ -206,7 +206,10 @@
         gigabyte each.
         </p>
 
-        <img src="images\parquet_structure.png" alt="explaining parquet file structure" height="500px" width="800px">
+        <div class="image-container">
+          <img src="images\parquet_structure.png" alt="explaining parquet file structure" style="width: 800;">
+        </div>
+
       </div>
     </div>
   </div>
@@ -234,7 +237,9 @@
           classification with 62 classes.
           <h3>Step 2: Splitting the data set for training, validation and test</h3>
 
-          <img src="images\data_split.png" alt="" width="600px">
+          <div class="image-container">
+            <img src="images\data_split.png" alt="" style="width: 800;">
+          </div>
           We split the dataset into three subsets: training, validation, and test. It then efficiently processes the
           data in batches of size 64 using TensorFlow's TFRecordDataset. Each subset is decoded, converted, batched, and
           prefetched to optimize training performance. The resulting datasets are cached in memory to speed up access
@@ -262,8 +267,9 @@
             accuracy metric for evaluation during training.
             The overall architecture is a sequence-to-sequence model with two LSTM layers, followed by a TimeDistributed
             dense layer for multi-class classification, and a custom downsampling step before training.</p>
-
-          <img src="images\model_summary.png" alt="" width="400px">
+          <div class="image-container">
+            <img src="images\model_summary.png" alt="" style="width: 600;">
+          </div>
 
           <h3> Step 4: Model Training and Inference</h3>
           <p>
@@ -370,9 +376,50 @@
           <div class="heading">
             <h2>Challenges</h2>
           </div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat harum voluptatum vero dolore possimus
-          corrupti cupiditate veritatis similique illo, nulla consequuntur eum, ea eaque aperiam est fugit modi optio?
-          Magnam.
+          <h3>Preprocessing</h3>
+          <p>Target phrases and input sequences are of variable length, making it hard for the LSTM model to handle. We
+            decided to preprocess the target labels used as input to include padding, start pointer, and end pointer
+            characters . And turn this problem into a Sequence to Sequence (seq2seq) LSTM solution</p>
+          <h3>Dealing with large data set</h3>
+
+          <p>The vast size of the dataset (189) made it impossible to load it all into memory during training. To
+            overcome this, we used mini-batch training with sixty-four training examples for each batch.
+          </p>
+
+          <h3>Kaggle Limitations
+          </h3>
+          <p>To overcome the storage issue of downloading the entire dataset onto our personal computers, we used Kaggle
+            notebooks, which had some limitations. Namely, the notebook would not cache the session and automatically
+            deactivate idle sessions, which made it time consuming to rerun.
+
+            Also, sharing our notebooks with one another was incredibly difficult on this platform. The site does not
+            utilize git, so we were forced to constantly fork each other’s notebooks, manually copying over code from
+            other versions.
+          </p>
+          <h3>Sequence to Sequence learning</h3>
+          <p>To translate sign language to text, we used sequence to sequence learning, which is used to output
+            sequences of varying lengths, something normally used in NLP language translation problems. In a sequence to
+            sequence model the neural network consists of an encoding layer which takes the input and processes it, and
+            the decoding layer which takes in the output from the encoding layer and generates the output
+            sequence-by-sequence. Transformer models usually have superior performance and training time.
+
+            However, we wanted to approach the problem in a novel way, not already attempted in the competition, so we
+            used a Long Short Term Memory Model (LSTM). While not as sophisticated as a Transformer, it is not affected
+            by vanishing or exploding gradients like ‘vanilla’ RNN. However it does have some disadvantages in relation
+            to transformers. The encoder-decoder architecture of LSTMs requires sequential computation, leading to
+            slower training and inference times, especially for longer sequences.
+
+            Also, the “attention mechanisms” present in Transformer models allow the model to focus on specific parts of
+            the input sequence while generating each element of the output sequence. LSTMs lack this built-in attention
+            mechanism, meaning they may not be as effective at selectively attending to relevant parts of the input
+            during decoding..
+          </p>
+          <h3>Levenshtein Distance</h3>
+          <p>Levenshtein Distance is a metric used to quantify the difference or similarity between two strings by
+            measuring the minimum number of “edit operations” needed to transform one string to another.While the
+            calculation of the Levenshtein distance from two strings or from two tensors are straightforward, applying
+            the Levenshtein distance as a custom metric in a keras API proves challenging.
+          </p>
         </div>
       </div>
     </div>
@@ -429,12 +476,12 @@
           <div class="heading">
             <h2>Team</h2>
           </div>
-          <ul>
-            <li>Minh-Hang Radetsky</li>
-            <li>Sam Bryan</li>
-            <li>Adish Jain</li>
-            <li>Sireesha Bachu</li>
-          </ul>
+          <div class="row"></div>
+          <div class="col col-md-6 col-lg-3">Minh-Hang Radetsky</div>
+          <div class="col col-md-6 col-lg-3">Sam Bryan</div>
+          <div class="col col-md-6 col-lg-3">Adish Jain</div>
+          <div class="col col-md-6 col-lg-3">Sireesha Bachu</div>
+
         </div>
       </div>
     </div>
