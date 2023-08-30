@@ -21,7 +21,7 @@ $(document).ready(function () {
     });
 
     var typed = new Typed('.typed', {
-        strings: ['Our First Kaggle Competition', 'WPI CS539', 'Machine Learning'],
+        strings: ['Software Engineer.', 'Web Developer.', 'Student.'],
         typeSpeed: 70,
         loop: true,
         startDelay: 1000,
@@ -55,56 +55,37 @@ $(document).ready(function () {
 
     // when window is scrolled, this code will be executed
     $(window).scroll(function () {
-        if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
-            $('.chart').easyPieChart({
-                easing: 'easeInOut',
-                barColor: '#fff',
-                trackColor: false,
-                scaleColor: false,
-                lineWidth: 4,
-                size: 152,
-                onStep: function (from, to, percent) {
-                    $(this.el).find('.percent').text(Math.round(percent));
-                }
-            });
-        }
+        
 
-        if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
+        if (!countUpFinished && window.scrollY > statsTopOffset - $(window).height() + 200) {
             $(".counter").each(function () {
                 var element = $(this);
                 var endVal = parseInt(element.text());
-                element.countup(endVal);
-            })
-
+    
+                // Create a new countUp instance for each element
+                var options = {
+                    startVal: 0,  // Start value for counting
+                    endVal: endVal,
+                    duration: 2,  // Duration in seconds
+                    useEasing: true,
+                    useGrouping: true,
+                    separator: ',',
+                };
+    
+                var countUp = new CountUp(this, 0, endVal, 0, options);
+                if (!countUp.error) {
+                    countUp.start();
+                } else {
+                    console.error(countUp.error);
+                }
+            });
+    
             countUpFinished = true;
         }
     })
 
     // fancy box
     $("[data-fancybox]").fancybox(); // select all elements with the [data-fancybox] attribute
-
-
-    // isotope
-
-    // $("#filters a").click(function(){
-    //     $("#filters .current").removeClass("current");
-    //     $(this).addClass("current");
-
-    //     var selector = $(this).attr("data-filter");
-
-    //     $(".items").isotope({
-    //         filter: selector,
-    //         animationOptions: {
-    //             duration: 1500,
-    //             easing: 'linear',
-    //             queue: false
-    //         }
-    //     });
-    //     return false; //override the default outcome of clicking
-    // })
-
-
-    // isotope
 
     // init Isotope
     var $grid = $('.items').isotope({
@@ -149,6 +130,46 @@ $(document).ready(function () {
             body.removeClass("fixedNav");
         }
     }
+
+
+    // // for the counter in the stats section
+    // const counters = $('.counter');
+
+    // const options = {
+    //     threshold: 0.2, // Adjust this value to control when the animation starts relative to view port 
+    // };
+
+
+    // const handleIntersection = (entries, observer) => {
+    //   entries.forEach(entry => {
+    //     if (entry.isIntersecting) {
+    //       const targetCounter = $(entry.target);
+    //       const finalCount = parseInt(targetCounter.text(), 10);
+
+    //       let start = 0;
+    //       const duration = 2000; // Animation duration in milliseconds
+    //       const step = Math.ceil(finalCount / (duration / 10));
+
+    //       const counterInterval = setInterval(() => {
+    //         start += step;
+    //         if (start >= finalCount) {
+    //           targetCounter.text(finalCount);
+    //           clearInterval(counterInterval);
+    //         } else {
+    //           targetCounter.text(start);
+    //         }
+    //       }, 10);
+
+    //       observer.unobserve(targetCounter[0]);
+    //     }
+    //   });
+    // };
+
+    // const observer = new IntersectionObserver(handleIntersection, options);
+
+    // counters.each(function() {
+    //   observer.observe(this);
+    // });
 });
 
 
