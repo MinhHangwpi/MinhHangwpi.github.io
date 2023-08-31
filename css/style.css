@@ -45,12 +45,12 @@
 
 .titleMessage .heading .main {
     font-size: 50px;
-    font-weight: 200;  
+    font-weight: 200;
 }
 
 .titleMessage .heading .sub {
     font-size: 23px;
-    font-weight: 200;  
+    font-weight: 200;
 }
 
 .section {
@@ -58,18 +58,18 @@
 }
 
 .aboutImage {
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .skillsSection,
-.contactSection, 
-.resumeSection {
+.contactSection,
+.statsSection {
     background-color: #1ca0f0;
     color: #fff;
 }
 
 .skill {
-    text-align:center;
+    text-align: center;
     margin-left: 10px;
 }
 
@@ -94,7 +94,7 @@
     font-size: 35px;
 }
 
-.chart .percent:after{
+.chart .percent:after {
     content: '%'
 }
 
@@ -164,12 +164,13 @@
 }
 
 .contactButton i {
-    font-size: 30px; /* Adjust the font size as desired */
-  }
+    font-size: 30px;
+    /* Adjust the font size as desired */
+}
 
 .contactButton:hover {
     text-decoration: none;
-    color:#1ca0f0;
+    color: #1ca0f0;
     background-color: #fff;
 }
 
@@ -186,7 +187,7 @@
 .contactButton:hover .text {
     opacity: 1;
     visibility: visible;
-  }
+}
 
 .contact-group {
     margin: 30px;
@@ -292,7 +293,7 @@
     -transition: all 0.2s linear, 1s;
 }
 
-.items .item:hover .imageOverlay{
+.items .item:hover .imageOverlay {
     opacity: 1;
 }
 
@@ -322,35 +323,51 @@
     -transform: scale(1.05, 1.05);
 }
 
+.project-title {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    color:#bdc3c7;
+    font-weight: bold;
+}
+
+.items .item:hover .project-title {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 1;
+}
+
 
 #navigation {
-	background-color: #1ca0f0;
+    background-color: #1ca0f0;
     padding: 20px 10px;
     z-index: 100;
     width: 100%;
 }
 
 #navigation li {
-	padding: 0 10px;
+    padding: 0 10px;
 }
 
 #navigation li a {
-	color: #fff;
+    color: #fff;
 }
 
 .navbar-brand,
 .navbar-brand:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .navbar-toggler-icon {
-	background: url(../images/icons/menu.png);
-	background-size: 100%;
+    background: url(../images/icons/menu.png);
+    background-size: 100%;
 }
 
 .fixedNav #navigation {
-	position: fixed;
-	top: 0;
+    position: fixed;
+    top: 0;
 }
 
 .loader {
@@ -398,8 +415,9 @@
 }
 
 .skillsButton i {
-    font-size: 30px; /* Adjust the font size as desired */
-  }
+    font-size: 30px;
+    /* Adjust the font size as desired */
+}
 
 .skills-item {
     display: flex;
@@ -408,6 +426,117 @@
 
 .skillsButton:hover {
     text-decoration: none;
-    color:#1ca0f0;
+    color: #1ca0f0;
     background-color: #fff;
+}
+
+/* for section title formatting */
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #45505b;
+}
+
+.section-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #0563bb;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #45505b;
+}
+
+.resume .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #0563bb;
+    position: relative;
+}
+
+.resume .resume-item h4 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #0563bb;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+    font-size: 16px;
+    background: #f7f8f9;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+    padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+    padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+    padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #fff;
+    border: 2px solid #0563bb;
 }
