@@ -132,7 +132,7 @@
     font-size: 56px;
     margin-bottom: 10px;
     font-weight: 400;
-    color: #1ca0f0;
+    color: #edeeef;
 }
 
 
@@ -315,6 +315,7 @@
     right: 0px;
 }
 
+/* an effect to cause the image to enlarge slightly unpon hover */
 .items .item:hover img {
     -webkit-transform: scale(1.05, 1.05);
     -moz-transform: scale(1.05, 1.05);
@@ -323,29 +324,36 @@
     -transform: scale(1.05, 1.05);
 }
 
-.project-title {
+/* .project-title {
     position: absolute;
-    /* bottom: -30px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0; */
-    /* transition: transform 0.3s, opacity 0.3s; */
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
     color:#090909;
     font-weight: bold;
 }
-/* 
+
 .items .item:hover .project-title {
     transform: translateX(-50%) translateY(-100%);
     opacity: 1;
 } */
 
-.title-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.items .project-title {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%; /* Optional: Make the title span the full width */
+    text-align: center; /* Optional: Center the title horizontally */
+    color: #ddd;
+    font-weight: bolder;
+    background-color: #444;
+}
 
+.items .item:hover .project-title {
+    bottom: 40px;
+}
 
 #navigation {
     background-color: #1ca0f0;
@@ -423,8 +431,8 @@
 
 .skillsButton i {
     font-size: 30px;
-    /* Adjust the font size as desired */
 }
+
 
 .skills-item {
     display: flex;
