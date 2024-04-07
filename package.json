@@ -1,6 +1,6 @@
 {
   "name": "react-frontend-dev-portfolio",
-  "homepage": "http://MinhHangwpi.github.io/portfolio",
+  "homepage": "http://MinhHangwpi.github.io",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -31,7 +31,7 @@
     "test": "",
     "eject": "",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": "react-app"
