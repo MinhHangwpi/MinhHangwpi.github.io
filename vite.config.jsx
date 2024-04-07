@@ -7,7 +7,7 @@ const config = async () => {
     const { default: mdx } = await import('@mdx-js/rollup')
 
     return {
-        base: "/portfolio/",
+        base: "/",
         plugins: [reactPlugin(), mdx({ remarkPlugins: [] })],
         optimizeDeps: {
             include: ['react/jsx-runtime'],
