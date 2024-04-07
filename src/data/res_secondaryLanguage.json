@@ -1,0 +1,149 @@
+{
+  "basic_info": {
+    "description_header": "Xin chào!",
+    "description": "👋 Tôi là Hằng Trương. Là một Kỹ sư Phần mềm Toàn diện hiện đang làm việc tại Public Grid ở Boston, MA, tôi chuyên phát triển và triển khai các chức năng AWS Lambda sử dụng Serverless Stack và TypeScript. Tôi vừa hoàn thành chương trình Thạc sĩ Khoa học Máy tính từ Worcester Polytechnic Institute với điểm trung bình hoàn hảo 4.00/4.00, nơi tôi đã học các khóa học bao gồm Cấu trúc Dữ liệu, Giải thuật, Hệ thống Quản lý Cơ sở dữ liệu và nhiều hơn nữa. Hành trình chuyên nghiệp và học thuật của tôi đã được dành để nâng cao kỹ năng phát triển phần mềm của mình, với trọng tâm đặc biệt vào dịch vụ đám mây, quản lý dữ liệu và tính toán di động.",
+    "philosophy": "Tôi được thúc đẩy bởi những thách thức và cơ hội trong ngành công nghệ thông tin, với nền tảng vững chắc trong việc giải quyết vấn đề, làm việc nhóm và đam mê học hỏi và áp dụng các công nghệ mới. Mục tiêu của tôi là tiếp tục đóng góp vào các dự án có ảnh hưởng trong ngành CNTT, tận dụng kỹ năng kỹ sư phần mềm của mình để mang lại các giải pháp sáng tạo.",
+    "preference": "Tôi đang tìm kiếm cơ hội để mở rộng chuyên môn của mình trong Lập trình Toàn diện, đặc biệt là trong các vai trò tận dụng kinh nghiệm của tôi với AWS, TypeScript và các công nghệ web hiện đại.",
+    "section_name": {
+      "about": "Về Tôi",
+      "projects": "Dự Án",
+      "skills": "Kỹ Năng Kỹ Thuật",
+      "education": "Học Vấn",
+      "expertise": "Chuyên Môn",
+      "experience": "Kinh Nghiệm Làm Việc"
+    }
+  },
+  "projects": [
+    {
+      "title": "Nhận Diện Chữ Cái ASL",
+      "startDate": "06.2023",
+      "description": "Phát triển mô hình LSTM mã hóa - giải mã với TensorFlow để nhận diện chữ cái ASL từ các chuỗi video, đạt tỷ lệ chính xác 75%. Tích hợp mô hình này vào ứng dụng web để dịch thời gian thực.",
+      "images": [],
+      "url": "",
+      "technologies": [
+        {"class": "", "name": "Python"},
+        {"class": "", "name": "TensorFlow"},
+        {"class": "", "name": "Pandas"},
+        {"class": "", "name": "Numpy"}
+      ]
+    },
+    {
+      "title": "Ứng Dụng Di Động Sức Khỏe Gompei",
+      "startDate": "01.2023",
+      "description": "Dẫn dắt phát triển ứng dụng di động về sức khỏe cho theo dõi thể dục và đếm calo, đảm bảo tỷ lệ hài lòng 90% từ sinh viên WPI. Sử dụng Firebase cho xác thực và lưu trữ dữ liệu.",
+      "images": [],
+      "url": "",
+      "technologies": [
+        {"class": "", "name": "Kotlin"},
+        {"class": "", "name": "Google Android API"},
+        {"class": "", "name": "Firebase"}
+      ]
+    }
+  ],
+  "education": [
+    {
+      "company": "Viện Công nghệ Worcester Polytechnic",
+      "title": "Thạc sĩ Khoa học Máy tính",
+      "description": "Đạt điểm trung bình hoàn hảo 4.00/4.00, tập trung vào các khóa học như Cấu trúc Dữ liệu, Giải thuật, Hệ thống Quản lý Cơ sở dữ liệu và Học Máy.",
+      "years": "2022 - 2024",
+      "mainTech": ["Khoa học Máy tính"],
+      "technologies": [
+        "Cấu trúc Dữ liệu",
+        "Giải thuật: Thiết kế và Phân tích",
+        "Hệ thống Quản lý Cơ sở dữ liệu",
+        "Thiết kế Hệ thống Phần mềm",
+        "Tính toán Di động và Toàn diện",
+        "Lập trình Hệ thống và Mạng",
+        "Học Máy",
+        "Quản lý Dữ liệu Lớn",
+        "Hệ thống Điều hành"
+      ]
+    },
+    {
+      "company": "Đại học Northeastern",
+      "title": "Thạc sĩ Quản lý Dự án",
+      "description": "Chuyên ngành Quản lý Dự án tập trung vào dự án CNTT và Khoa học Dữ liệu.",
+      "years": "2018 - 2020",
+      "mainTech": ["Quản lý Dự án"],
+      "technologies": [
+        "Quản lý Dự án Agile",
+        "Phương pháp Quản lý Dự án"
+      ]
+    },
+    {
+      "company": "Đại học Ngoại thương",
+      "title": "Cử nhân Kinh tế và Kinh doanh Quốc tế",
+      "description": "Chuyên ngành Kinh tế tập trung vào hoạt động Thương mại Quốc tế tại Việt Nam.",
+      "years": "2014 - 2018",
+      "mainTech": ["Kinh tế"],
+      "technologies": [
+        "Kinh tế Vĩ mô/Micro",
+        "Kinh tế Lượng",
+        "Chiến lược Kinh doanh Quốc tế"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Public Grid (trước đây là Cottage)",
+      "title": "Kỹ sư Phần mềm Toàn diện",
+      "description": "",
+      "years": "01.2024 - Hiện tại",
+      "mainTech": ["Serverless", "AWS", "TypeScript"],
+      "technologies": [
+        "Serverless Stack",
+        "AWS Lambda",
+        "TypeScript",
+        "Playwright",
+        "Puppeteer",
+        "Next.js",
+        "Stripe API",
+        "CI/CD"
+      ],
+      "responsibilities": [
+        "Thiết kế và triển khai chức năng AWS Lambda sử dụng Serverless Stack và TypeScript để tự động hóa việc thu thập dữ liệu năng lượng của khách hàng thông qua phiên trình duyệt được xác thực với Playwright và Puppeteer. Dự án này đảm bảo sự đồng ý của khách hàng và tạo điều kiện phân tích sử dụng năng lượng, cung cấp các khuyến nghị tiết kiệm chi phí.",
+        "Cải tiến công việc hàng đêm, kết hợp các nhiệm vụ thu thập dữ liệu khác nhau như chi tiết hóa đơn, sử dụng và PDF vào một phiên làm việc hiệu quả, giảm 90% việc sử dụng CPU và thời gian thực thi.",
+        "Triển khai tính năng thu thập phương thức thanh toán an toàn sử dụng Next.js và API Stripe, nâng cao sản phẩm tối thiểu khả thi của nền tảng thanh toán và đóng góp vào cột mốc doanh thu ban đầu của startup vào tháng 3 năm 2024.",
+        "Khắc phục sự cố đường ống triển khai CI/CD và triển khai lớp lambda giảm kích thước của gói triển khai từ 14GB xuống 3GB."
+      ]
+    },
+    {
+      "company": "Matcha Electric - Dịch vụ Sạc EV",
+      "title": "Thực tập sinh Kỹ sư Phần mềm",
+      "description": "",
+      "years": "09.2023 - 12.2023",
+      "mainTech": ["TypeScript", "AWS", "MySQL"],
+      "technologies": [
+        "Stripe API",
+        "Next.js",
+        "TypeScript",
+        "MySQL",
+        "AWS",
+        "API RESTful",
+        "OCPP"
+      ],
+      "responsibilities": [
+        "Tích hợp tính năng thiết lập thanh toán Stripe vào tính năng tiếp nhận chủ sở hữu bất động sản trong cổng thông tin dựa trên Next.js. Thử nghiệm thành công tính năng với một tòa nhà của Hiệp hội Chủ nhà.",
+        "Triển khai trang phiên sạc và tính năng sạc không cần thẻ RFID vật lý trên cổng thông tin tài xế.",
+        "Thiết kế và triển khai API RESTful sử dụng TypeScript, MySQL và AWS, tập trung vào khả năng tương tác với Giao thức Điểm Sạc Mở (OCPP) cho hệ thống sạc EV trong các tòa nhà đa thuê.",
+        "Thiết kế giải pháp middleware mạnh mẽ, bao gồm xác thực dựa trên JWT, phân trang hiệu quả cho bộ dữ liệu lớn và các tính năng ghi nhật ký và xử lý lỗi tùy chỉnh nâng cao."
+      ]
+    }
+  ],
+  "expertise": {
+    "icons": [
+      {
+        "title": "Phát Triển Toàn diện",
+        "description": "Chuyên môn đã được chứng minh trong việc phát triển các ứng dụng toàn diện có khả năng mở rộng sử dụng nhiều công nghệ, bao gồm AWS, TypeScript, JavaScript, React và Next.js."
+      },
+      {
+        "title": "Dịch vụ Đám mây và Kiến trúc Không Server",
+        "description": "Kinh nghiệm rộng lớn với các dịch vụ AWS và kiến trúc không server, cho phép giải pháp phần mềm hiệu quả về chi phí."
+      },
+      {
+        "title": "Quản Lý và Phân Tích Dữ Liệu",
+        "description": "Có kỹ năng trong việc quản lý và phân tích dữ liệu với các công cụ như MySQL, PostgreSQL, MongoDB và tận dụng Hadoop và Spark cho các tình huống dữ liệu lớn."
+      }
+    ]
+  }
+}

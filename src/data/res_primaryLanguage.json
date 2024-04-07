@@ -1,0 +1,210 @@
+{
+  "basic_info": {
+    "description_header": "Hi!",
+    "description": "👋 I'm Hang Truong. As a Full-stack Software Engineer currently working at Public Grid in Boston, MA, I specialize in developing and implementing AWS Lambda functions using the Serverless Stack and TypeScript. I recently completed my Master of Science in Computer Science from Worcester Polytechnic Institute with a perfect GPA of 4.00/4.00, where my coursework included Data Structures, Algorithms, Database Management Systems, and more. My professional and academic journey has been dedicated to enhancing my skills in software development, with a particular focus on cloud services, data management, and mobile computing.",
+    "philosophy": "I’m driven by the challenges and opportunities in the tech industry, with a strong foundation in problem-solving, team collaboration, and a passion for learning and applying new technologies. My goal is to continue contributing to impactful projects in the IT sector, leveraging my skills in software engineering to deliver innovative solutions.",
+    "preference": "I’m on the lookout for opportunities to expand my expertise in Full-stack Development, particularly in roles that leverage my experience with AWS, TypeScript, and modern web technologies.",
+    "section_name": {
+      "about": "About me",
+      "projects": "Projects",
+      "skills": "Technical Skills",
+      "education": "Education",
+      "expertise": "Expertise",
+      "experience": "Professional Experience"
+    }
+  },
+  "projects": [
+    {
+      "title": "ASL Fingerspelling Recognition",
+      "startDate": "06.2023",
+      "description": "Developed an Encoder-decoder LSTM model with TensorFlow to recognize ASL fingerspelling from video sequences, achieving a 75% accuracy rate. Integrated this model into a web app for real-time translation.",
+      "images": [],
+      "url": "",
+      "technologies": [
+        {
+          "class": "",
+          "name": "Python"
+        },
+        {
+          "class": "",
+          "name": "TensorFlow"
+        },
+        {
+          "class": "",
+          "name": "Pandas"
+        },
+        {
+          "class": "",
+          "name": "Numpy"
+        }
+      ]
+    },
+    {
+      "title": "Gompei’s Health Mate Mobile App",
+      "startDate": "01.2023",
+      "description": "Led development of a mobile-based health app for fitness tracking and calorie counting, securing a 90% satisfaction rate among WPI students. Utilized Firebase for authentication and data storage.",
+      "images": [],
+      "url": "",
+      "technologies": [
+        {
+          "class": "",
+          "name": "Kotlin"
+        },
+        {
+          "class": "",
+          "name": "Google Android API"
+        },
+        {
+          "class": "",
+          "name": "Firebase"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "company": "Worcester Polytechnic Institute",
+      "title": "Master of Science in Computer Science",
+      "description": "Achieved a perfect GPA of 4.00/4.00, focusing on courses like Data Structures, Algorithms, Database Management System, and Machine Learning.",
+      "years": "2022 - 2024",
+      "mainTech": [
+        "Computer Science"
+      ],
+      "technologies": [
+        "Data Structures",
+        "Algorithms: Design and Analysis",
+        "Database Management System",
+        "Design of Software Systems",
+        "Mobile and Ubiquitous Computing",
+        "System and Network Programming",
+        "Machine Learning",
+        "Big Data Management",
+        "Operating Systems"
+      ]
+    },
+    {
+      "company": "Northeastern University",
+      "title": "Master of Science in Project Management",
+      "description": "Project Management focusing on IT and Data Science projects.",
+      "years": "2018 - 2020",
+      "mainTech": [
+        "Project Management"
+      ],
+      "technologies": [
+        "Agile Project Management",
+        "Project Management Methodologies"
+      ]
+    },
+    {
+      "company": "Foreign Trade University",
+      "title": "Bachelor of Science in Economics and International Business",
+      "description": "Economics focusing on International Trade activities in Vietnam.",
+      "years": "2014 - 2018",
+      "mainTech": [
+        "Economics"
+      ],
+      "technologies": [
+        "Macro/Micro Economics",
+        "Econometrics",
+        "International Business Strategies"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Public Grid (formerly known as Cottage)",
+      "title": "Full-stack Software Engineer",
+      "description": "",
+      "years": "01.2024 - Present",
+      "mainTech": [
+        "Serverless",
+        "AWS",
+        "TypeScript"
+      ],
+      "technologies": [
+        "Serverless Stack",
+        "AWS Lambda",
+        "TypeScript",
+        "Playwright",
+        "Puppeteer",
+        "Next.js",
+        "Stripe API",
+        "CI/CD"
+      ],
+      "responsibilities": [
+        "Engineered and implemented AWS Lambda functions using the Serverless Stack and TypeScript to automate the collection of customer energy data through authenticated browser sessions with Playwright and Puppeteer. This project ensures customer consent and facilitates energy usage analysis, providing cost-saving recommendations.",
+        "Revamped the nightly batch job, consolidating different data retrieval tasks like billing details, usage, and PDFs into one efficient session, which cut down CPU usage and execution times by 90%.",
+        "Implemented a secure payment method collection feature using Next.js and the Stripe API, enhancing the billing platform’s minimum viable product and contributing to the startup’s initial revenue milestone in March 2024.",
+        "Troubleshooted CI/CD deployment pipelines and implemented lambda layers that reduced the size of deployment packages from 14GB to 3GB."
+      ]
+    },
+    {
+      "company": "Matcha Electric - EV Charging as a Service",
+      "title": "Software Engineering Intern",
+      "description": "",
+      "years": "09.2023 - 12.2023",
+      "mainTech": [
+        "TypeScript",
+        "AWS",
+        "MySQL"
+      ],
+      "technologies": [
+        "Stripe API",
+        "Next.js",
+        "TypeScript",
+        "MySQL",
+        "AWS",
+        "RESTful APIs",
+        "OCPP"
+      ],
+      "responsibilities": [
+        "Integrated the Stripe API payment setup feature into the property owner onboarding feature within Next.js-based portal. Successfully prototyped feature with a Home Owner Association building.",
+        "Implemented the charge session page and the charge without physical RFID card feature on the driver portal.",
+        "Designed and implemented RESTful APIs using TypeScript, MySQL, and AWS, focusing on interoperability with the Open Charge Point Protocol (OCPP) for EV charging systems in multi-tenant buildings.",
+        "Engineered robust middleware solutions, including JWT-based authentication, efficient pagination for large datasets, and advanced custom logging and error handling features."
+      ]
+    },
+    {
+      "company": "Massachusetts Executive Office of Health and Human Services",
+      "title": "Operations Specialist (HIX/IES Program)s",
+      "description": "",
+      "years": "01.2021 - 09.2023",
+      "mainTech": [
+        "TypeScript",
+        "AWS",
+        "MySQL"
+      ],
+      "technologies": [
+        "Dynatrace Monitoring",
+        "Centrify Single Sign-on",
+        "MS Project",
+        "Project Management",
+        "Cross-functional Communications"
+      ],
+      "responsibilities": [
+        "Facilitating the development, testing, and deployment of the Daily Data Extract solution, a Java utility that extracts system data and delivers to enterprise data warehouses.",
+        "Documenting the analysis of real-time CPU utilization, server response time, as well as incidents using Dynatrace monitoring tool to prevent and mitigate production incidents or system issues.",
+        "Facilitating ongoing alerts threshold tuning discussions among DevOps team and Cloud hosting managed service team to optimize the trade-off between false positivity and false negativity rate.",
+        "Monitoring SSL certification expiration dates and certificate-related production issues and invoking resolutions from the internal team members and vendors.",
+        "Documenting the outcomes and facilitating action items for the ongoing discussions around the development of a customized reporting tool to record real-time traffic and user experience to the www.mahix.org website.",
+        "Analyzing resources and schedule constraints, and developing a project plan for the effort to move from a proprietary Legacy Identity Service to the Azure Active Directory platform."
+      ]
+    }
+  ],
+  "expertise": {
+    "icons": [
+      {
+        "title": "Full-Stack Development",
+        "description": "Proven expertise in developing scalable full-stack applications using a variety of technologies, including AWS, TypeScript, JavaScript, React, and Next.js."
+      },
+      {
+        "title": "Cloud Services and Serverless Architecture",
+        "description": "Extensive experience with AWS services and Serverless architecture, enabling efficient and cost-effective software solutions."
+      },
+      {
+        "title": "Data Management and Analysis",
+        "description": "Skilled in managing and analyzing data with tools like MySQL, PostgreSQL, MongoDB, and leveraging Hadoop and Spark for big data scenarios."
+      }
+    ]
+  }
+}

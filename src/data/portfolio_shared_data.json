@@ -1,0 +1,45 @@
+{
+  "basic_info": {
+    "name": "Hang Truong",
+    "titles": ["Full-stack Developer", "Web Developer", "DevOps Developer", "Serverless Developer", "Mobile App Developer"],
+    "social": [
+      {"name": "github", "url": "https://github.com/MinhHangwpi", "class": "fab fa-github"},
+      {"name": "linkedin", "url": "https://www.linkedin.com/in/mh-truong/", "class": "fab fa-linkedin"},
+      {"name": "email", "url": "mailto:hangtmftu@gmail.com", "class": "fa fa-envelope"}
+    ],
+    "image": "myProfile.jpg"
+  },
+  "skills": {
+    "icons": [
+      {"name": "Python", "class": "devicon-python-plain", "level": "unknown"},
+      {"name": "TypeScript", "class": "devicon-typescript-plain", "level": "unknown"},
+      {"name": "JavaScript", "class": "devicon-javascript-plain", "level": "unknown"},
+      {"name": "Java", "class": "devicon-java-plain", "level": "unknown"},
+      {"name": "Kotlin", "class": "devicon-kotlin-plain", "level": "unknown"},
+      {"name": "C", "class": "devicon-c-plain", "level": "unknown"},
+      {"name": "Scala", "class": "devicon-scala-plain", "level": "unknown"},
+      {"name": "R", "class": "devicon-rstudio-plain", "level": "unknown"},
+      {"name": "HTML/CSS", "class": "devicon-html5-plain", "level": "unknown"},
+      {"name": "MySQL", "class": "devicon-mysql-plain", "level": "unknown"},
+      {"name": "PostgreSQL", "class": "devicon-postgresql-plain", "level": "unknown"},
+      {"name": "MongoDB", "class": "devicon-mongodb-plain", "level": "unknown"},
+      {"name": "Cloud Firestore", "class": "devicon-googlecloud-plain", "level": "unknown"},
+      {"name": "Express", "class": "devicon-express-original", "level": "unknown"},
+      {"name": "React", "class": "devicon-react-original", "level": "unknown"},
+      {"name": "Next.js", "class": "devicon-nextjs-plain", "level": "unknown"},
+      {"name": "Hadoop", "class": "devicon-hadoop-plain", "level": "unknown"},
+      {"name": "Spark", "class": "devicon-apachespark-plain", "level": "unknown"},
+      {"name": "scikit-learn", "class": "devicon-scikitlearn-plain", "level": "unknown"},
+      {"name": "TensorFlow", "class": "devicon-tensorflow-original", "level": "unknown"},
+      {"name": "Playwright", "class": "devicon-playwright-plain", "level": "unknown"},
+      {"name": "Puppeteer", "class": "devicon-puppeteer-plain", "level": "unknown"},
+      {"name": "Linux", "class": "devicon-linux-plain", "level": "unknown"},
+      {"name": "Git/GitHub", "class": "devicon-git-plain", "level": "unknown"},
+      {"name": "Android", "class": "devicon-android-plain", "level": "unknown"},
+      {"name": "Docker", "class": "devicon-docker-plain", "level": "unknown"},
+      {"name": "Swagger", "class": "devicon-swagger-plain", "level": "unknown"},
+      {"name": "Postman", "class": "devicon-postman-plain", "level": "unknown"},
+      {"name": "AWS (Lambda, API Gateway, S3, Code Build, Elastic Beanstalk)", "class": "devicon-amazonwebservices-plain", "level": "unknown"}
+    ]
+  }
+}
