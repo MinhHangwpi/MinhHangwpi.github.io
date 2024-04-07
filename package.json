@@ -2,7 +2,7 @@
   "name": "react-frontend-dev-portfolio",
   "homepage": "http://MinhHangwpi.github.io/portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "dependencies": {
     "@emotion/react": "^11.11.4",
