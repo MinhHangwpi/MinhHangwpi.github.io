@@ -18,7 +18,11 @@
       "title": "ASL Fingerspelling Recognition",
       "startDate": "06.2023",
       "description": "Developed an Encoder-decoder LSTM model with TensorFlow to recognize ASL fingerspelling from video sequences, achieving a 75% accuracy rate. Integrated this model into a web app for real-time translation.",
-      "images": [],
+      "images": [
+        "asl/p1.jpg",
+        "asl/p1.png",
+        "p2.jpg"
+      ],
       "url": "",
       "technologies": [
         {
@@ -43,7 +47,7 @@
       "title": "Gompei’s Health Mate Mobile App",
       "startDate": "01.2023",
       "description": "Led development of a mobile-based health app for fitness tracking and calorie counting, securing a 90% satisfaction rate among WPI students. Utilized Firebase for authentication and data storage.",
-      "images": [],
+      "images": ["gompei/1.jpg", "gompei/2.jpg"],
       "url": "",
       "technologies": [
         {
@@ -57,6 +61,19 @@
         {
           "class": "",
           "name": "Firebase"
+        }
+      ]
+    },
+    {
+      "title": "Planar Puzzle Web App",
+      "startDate": "09.2022",
+      "description": "React-based puzzle game",
+      "images": ["planar-puzzle/p1.jpg", "planar-puzzle/p2.png"],
+      "url": "",
+      "technologies": [
+        {
+          "class": "",
+          "name": "React"
         }
       ]
     }

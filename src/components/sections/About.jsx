@@ -1,11 +1,37 @@
 import React from "react";
-import { Icon } from "@iconify/react";
-import angularIcon from "@iconify/icons-logos/spring";
-import reactIcon from "@iconify/icons-logos/react";
-import vueIcon from "@iconify/icons-logos/ruby";
+
+const AvatarPicture = ({ srcPath }) => {
+  return (
+    <div className="polaroid">
+      <span style={{ cursor: "auto" }}>
+        <img src={srcPath} alt="Avatar placeholder" />
+      </span>
+    </div>
+  )
+}
+
+const IntroductionCard = ({ hello, description, philosophy, preference }) => {
+  return (
+    <div className="terminal-card">
+      <div className="terminal-header">
+        <span className="terminal-dot red"></span>
+        <span className="terminal-dot yellow"></span>
+        <span className="terminal-dot green"></span>
+      </div>
+      <div className="terminal-body">
+        <span className="wave">{hello}</span>
+        <p>{description}</p>
+        <p>{philosophy}</p>
+        <p>{preference}</p>
+      </div>
+    </div>
+  );
+}
+
+
 
 const About = ({ sharedBasicInfo, resumeBasicInfo }) => {
-  const profilepic = "images/" + sharedBasicInfo.image;
+  const profilepic = "/images/" + sharedBasicInfo.image;
   const sectionName = resumeBasicInfo.section_name.about;
   const hello = resumeBasicInfo.description_header;
   const description = resumeBasicInfo.description;
@@ -13,75 +39,23 @@ const About = ({ sharedBasicInfo, resumeBasicInfo }) => {
   const preference = resumeBasicInfo.preference;
 
   return (
-    <section id="about">
+    <section id="about" className="header">
       <div className="col-md-12">
-        <h1 style={{ color: "black" }}>
+        <h1 className="section-title" style={{ color: "black" }}>
           <span>{sectionName}</span>
         </h1>
         <div className="row center mx-auto mb-5">
-          <div className="col-md-4 mb-5 center">
-            <div className="polaroid">
-              <span style={{ cursor: "auto" }}>
-                <img height="250px" src={profilepic} alt="Avatar placeholder" />
-                <Icon
-                  icon={angularIcon}
-                  style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                />
-                <Icon
-                  icon={reactIcon}
-                  style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                />
-                <Icon
-                  icon={vueIcon}
-                  style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                />
-              </span>
-            </div>
+          <div className="col-md-4 center">
+            <AvatarPicture srcPath={profilepic} />
           </div>
 
           <div className="col-md-8 center">
             <div className="col-md-10">
-              <div className="card">
-                <div className="card-header">
-                  <span
-                    className="iconify"
-                    data-icon="emojione:red-circle"
-                    data-inline="false"
-                  ></span>{" "}
-                  &nbsp;{" "}
-                  <span
-                    className="iconify"
-                    data-icon="twemoji:yellow-circle"
-                    data-inline="false"
-                  ></span>{" "}
-                  &nbsp;{" "}
-                  <span
-                    className="iconify"
-                    data-icon="twemoji:green-circle"
-                    data-inline="false"
-                  ></span>
-                </div>
-                <div
-                  className="card-body font-trebuchet text-justify ml-3 mr-3"
-                  style={{
-                    height: "auto",
-                    fontSize: "132%",
-                    lineHeight: "200%",
-                  }}
-                >
-                  <br />
-                  <span className="wave">{hello}</span>
-                  <br />
-                  <br />
-                  {description}
-                  <br />
-                  <br />
-                  {philosophy}
-                  <br />
-                  <br />
-                  {preference}
-                </div>
-              </div>
+              <IntroductionCard
+                hello={hello}
+                description={description}
+                philosophy={philosophy}
+                preference={preference} />
             </div>
           </div>
         </div>

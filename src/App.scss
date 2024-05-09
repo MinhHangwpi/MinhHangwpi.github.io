@@ -79,7 +79,7 @@ header {
 }
 
 header h1 {
-	font-size: 400%;
+	font-size: 500%;
 	text-align: center;
 	font-weight: 600 !important;
 	color: #353239;
@@ -110,16 +110,7 @@ header h1 {
 	background: #fff;
 	overflow: hidden;
 }
-
-#about h1 {
-	padding-top: 5%;
-	font: 18px/24px 'opensans-bold', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: black;
-	text-align: center;
-}
-
+ 
 .foto img {
 	display: block;
 	width: 100%;
@@ -171,7 +162,9 @@ header h1 {
 
 .polaroid img {
 	display: block;
-	max-width: 200px;
+	max-width: 400px;
+	max-height: 400px;
+	transform: rotate(5deg);
 }
 
 .polaroid span {
@@ -370,6 +363,7 @@ header h1 {
 	.portfolio .closeButtonResponsive {
 		display: block;
 	}
+
 	.portfolio .portfolio-item {
 		margin-bottom: 30px;
 	}
@@ -386,7 +380,7 @@ header h1 {
 .section-title {
 	padding-top: 5%;
 	padding-bottom: 5%;
-	font: 18px/24px 'opensans-bold', sans-serif;
+	font: 30px 'opensans-bold', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	color: #fff;
@@ -424,4 +418,47 @@ footer a:focus {
 .social-links {
 	margin-top: 50px;
 	font-size: 22px;
+}
+
+
+// for the about page
+.terminal-card {
+	background-color: #333;
+	color: #fff;
+	border-radius: 5px;
+	font-family: 'Courier New', Courier, monospace;
+	border: 1px solid #555;
+}
+
+.terminal-header {
+	padding: 5px 10px;
+	background: #222;
+	display: flex;
+	align-items: center;
+}
+
+.terminal-dot {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.red {
+	background-color: #ff5f56;
+}
+
+.yellow {
+	background-color: #ffbd2e;
+}
+
+.green {
+	background-color: #27c93f;
+}
+
+.terminal-body {
+	padding: 10px;
+	font-size: 14px;
+	line-height: 1.5;
 }

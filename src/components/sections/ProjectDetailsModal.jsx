@@ -5,13 +5,13 @@ import * as LightSlider from "../../scss/light-slider.scss";
 import * as DarkSlider from "../../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 
-const ProjectDetailsModal = ({ data, onHide }) => {
+const ProjectDetailsModal = ({ show, data, onHide }) => {
   let title = "";
   let description = "";
   let url = "";
   let tech = [];
   let img = [];
-
+  
   if (data) {
     const { technologies, images } = data;
     if (technologies) {
@@ -41,6 +41,7 @@ const ProjectDetailsModal = ({ data, onHide }) => {
 
   return (
     <Modal
+      show={show}
       onHide={onHide}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

@@ -40,20 +40,22 @@ const Education = ({ resumeEducation, resumeBasicInfo }) => {
           icon={<i className="fas fa-graduation-cap experience-icon"></i>}
           key={i}
         >
-          <div style={{ textAlign: "left", marginBottom: "4px" }}>
-            {mainTechElements}
-          </div>
+          <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto' }}>
+            <div style={{ textAlign: "left", marginBottom: "4px" }}>
+              {mainTechElements}
+            </div>
 
-          <h3 className="vertical-timeline-element-title" style={{ textAlign: "left" }}>
-            {title}
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle" style={{ textAlign: "left" }}>
-            {company}
-          </h4>
-          <p className="vertical-timeline-element-subtitle" style={{ textAlign: "left", fontSize: "120%" }}>
-            {description}
-          </p>
-          <div style={{ textAlign: "left", marginTop: "15px" }}>{techElements}</div>
+            <h3 className="vertical-timeline-element-title" style={{ textAlign: "left" }}>
+              {title}
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle" style={{ textAlign: "left" }}>
+              {company}vertical-timeline-element-subtitle
+            </h4>
+            <p className="vertical-timeline-element-subtitle" style={{ textAlign: "left", fontSize: "120%" }}>
+              {description}
+            </p>
+            <div style={{ textAlign: "left", marginTop: "15px" }}>{techElements}</div>
+          </div>
         </VerticalTimelineElement>
       );
     });
@@ -70,8 +72,9 @@ const Education = ({ resumeEducation, resumeBasicInfo }) => {
           </h1>
         </div>
       </div>
-      <div className="col-md-8 mx-auto">
-        <VerticalTimeline>
+      <div className="col-md-12 mx-auto">
+        <VerticalTimeline
+        >
           {work}
           <VerticalTimelineElement
             iconStyle={{

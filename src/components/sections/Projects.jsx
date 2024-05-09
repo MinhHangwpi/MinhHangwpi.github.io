@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 
 const Projects = ({ resumeProjects, resumeBasicInfo }) => {
@@ -13,8 +13,10 @@ const Projects = ({ resumeProjects, resumeBasicInfo }) => {
   const handleDetailsModalClose = () => setDetailsModalShow(false);
 
   let projects = [];
+
+  const imagesPathBase = "/images/projects/";
+
   if (resumeProjects && resumeBasicInfo) {
-    const sectionName = resumeBasicInfo.section_name.projects;
     projects = resumeProjects.map((project) => (
       <div
         className="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center"
@@ -22,11 +24,13 @@ const Projects = ({ resumeProjects, resumeBasicInfo }) => {
         style={{ cursor: "pointer" }}
       >
         <span className="portfolio-item">
-          <div className="foto" onClick={() => handleDetailsModalShow(project)}>
+          <div className="foto" onClick={() => {
+            handleDetailsModalShow(project);
+          }}>
             <div>
               <img
-                src={project.images[0]}
-                alt="projectImages"
+                src={imagesPathBase + project.images[0]}
+                alt={imagesPathBase + project.images[0]}
                 style={{ marginBottom: 0, paddingBottom: 0, position: 'relative' }}
               />
               <span className="project-date">{project.startDate}</span>
